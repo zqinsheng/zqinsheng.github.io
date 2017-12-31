@@ -1,74 +1,65 @@
-$(function() {
-  var $toc = $("#toc");
-  if (!!$toc.length && screen.width > 992 && $('.content').find('h2').length != 0) {
-    $("#toc").tocify({
-      context: '.article-content',
-      theme: 'bootstrap3',
-      selectors: 'h2,h3,h4'
-    });
+(function($){
+    var toTop = ($('#sidebar').height() - $(window).height()) + 60;
+    // Caption
+    $('.article-entry').each(function(i) {
+        $(this).find('img').filter(function (element) {
+            return $(this).hasClass('');
+        }).each(function() {
+            // add image caption
+            if (this.alt && !(!!$.prototype.justifiedGallery && $(this).parent('.justified-gallery').length)) {
+                $(this).after('<span class="caption">' + this.alt + '</span>');
+            }
 
-    //sticky the toc
-    var $window = $(window),
-      $stickyEl = $('#toc'),
-      elTop = $stickyEl.offset().top;
-    //for page refresh, we can right position the toc
-    $stickyEl.toggleClass('sticky-scroll', elTop > 155);
-
-    //listen the window scroll
-    $window.scroll(function() {
-      elTop = $stickyEl.offset().top;
-      $stickyEl.toggleClass('sticky-scroll', elTop > 155);
-    });
-
-  }
-
-	// image view
-	$('.content img').on('click',function(){
-		window.open($(this).attr('src'),'_blank');
-	});
-
-  // highlight the menu
-  menuHighlight();
-
-  $(window).scroll(function() {
-    if ($(this).scrollTop()) {
-      $('#gotop:hidden').stop(true, true).fadeIn();
-    } else {
-      $('#gotop').stop(true, true).fadeOut();
-    }
-  });
-
-	//  enable ripple on buttons
-	$.material.ripples();
-
-  //this is adapted from http://css-tricks.com/moving-highlight/
-  function menuHighlight() {
-    var originalBG = $(".nav li").css("background-color"),
-      x, y, xy, bgWebKit, bgMoz,
-      lightColor = "rgba(1, 164, 149, 1)",
-      gradientSize = 60;
-
-    $('.nav li')
-      .mousemove(function(e) {
-        x = e.pageX - this.offsetLeft;
-        y = e.pageY - this.offsetTop;
-        xy = x + " " + y;
-
-        bgWebKit = "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize + ", from(" + lightColor + "), to(rgba(0, 150, 136, 1.0))), " + originalBG;
-        bgMoz = "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " + lightColor + " 0%, rgba(0, 150, 136, 1.0) " + gradientSize + "px)";
-
-        $(this)
-          .css({
-            background: bgWebKit
-          })
-          .css({
-            background: bgMoz
-          });
-
-      }).mouseleave(function() {
-        $(this).css({
-          background: originalBG
+            if ($(this).parent().prop("tagName") !== 'A') {
+                $(this).wrap('<a href="' + ($(this).attr("data-imgbig") ? $(this).attr("data-imgbig") : this.src) + '" title="' + this.alt + '" class="gallery-item"></a>');
+            }
         });
-      });
-  }
-});
+    });
+    if (typeof lightGallery != 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        $('.article-entry').each(function(i, entry) {
+            lightGallery(entry, options);
+        });
+        lightGallery($('.article-gallery')[0], options);
+    }
+    if (!!$.prototype.justifiedGallery) {  // if justifiedGallery method is defined
+        var options = {
+            rowHeight: 140,
+            margins: 4,
+            lastRow: 'justify'
+        };
+        $('.justified-gallery').justifiedGallery(options);
+    }
+
+    // Profile card
+    $(document).on('click', function () {
+        $('#profile').removeClass('card');
+    }).on('click', '#profile-anchor', function (e) {
+        e.stopPropagation();
+        $('#profile').toggleClass('card');
+    }).on('click', '.profile-inner', function (e) {
+        e.stopPropagation();
+    });
+
+    // To Top
+    if ($('#sidebar').length) {
+        $(document).on('scroll', function () {
+            if ($(document).width() >= 800) {
+                if(($(this).scrollTop() > toTop) && ($(this).scrollTop() > 0)) {
+                    $('#toTop').fadeIn();
+                    $('#toTop').css('left', $('#sidebar').offset().left);
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            } else {
+                $('#toTop').fadeIn();
+                $('#toTop').css('right', 20);
+            }
+        }).on('click', '#toTop', function () {
+            $('body, html').animate({ scrollTop: 0 }, 600);
+        });
+    }
+
+})(jQuery);
