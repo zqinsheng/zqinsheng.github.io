@@ -3,15 +3,92 @@
 
 
     
-    
-    
-    
   <url>
-    <loc>http://yoursite.com/2017/12/31/Goodbye-2017,looking-ahead-to-2018/</loc>
-    <lastmod>2017-12-31T14:10:10.571Z</lastmod>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%957/</loc>
+    <lastmod>2018-01-01T07:28:19.758Z</lastmod>
     <data>
         <display>
-        <title>End of the 2017</title>
+        <title>测试6</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%956/</loc>
+    <lastmod>2018-01-01T07:27:04.104Z</lastmod>
+    <data>
+        <display>
+        <title>测试5</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>测试标签5</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试标签5" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%955/</loc>
+    <lastmod>2018-01-01T07:26:51.399Z</lastmod>
+    <data>
+        <display>
+        <title>测试5</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>测试标签2</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试标签2" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%954/</loc>
+    <lastmod>2018-01-01T07:26:31.153Z</lastmod>
+    <data>
+        <display>
+        <title>测试4</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>测试标签1</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试标签1" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%953/</loc>
+    <lastmod>2018-01-01T07:24:56.633Z</lastmod>
+    <data>
+        <display>
+        <title>测试3333333333333333333333333333333333333333</title>
         <pubTime>2017-12-31T10:14:08.000Z</pubTime>
         
          
@@ -20,4 +97,69 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%952/</loc>
+    <lastmod>2018-01-01T07:24:43.521Z</lastmod>
+    <data>
+        <display>
+        <title>测试2</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%951/</loc>
+    <lastmod>2018-01-01T07:24:27.721Z</lastmod>
+    <data>
+        <display>
+        <title>测试11111</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/Goodbye-2017,looking-ahead-to-2018/</loc>
+    <lastmod>2018-01-01T07:23:55.234Z</lastmod>
+    <data>
+        <display>
+        <title>End of the 2017</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>生活随笔</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活随笔" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
 </urlset>
