@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/01/%E6%B5%8B%E8%AF%957/</loc>
+    <lastmod>2018-01-01T15:55:58.962Z</lastmod>
+    <data>
+        <display>
+        <title>痛击对手！</title>
+        <pubTime>2018-01-01T07:25:03.365Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A64/</loc>
     <lastmod>2018-01-01T08:59:41.620Z</lastmod>
     <data>
@@ -180,26 +200,6 @@
            
              
               <breadCrumb title="啦啦啦" url="http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/01/%E6%B5%8B%E8%AF%957/</loc>
-    <lastmod>2018-01-01T07:34:55.834Z</lastmod>
-    <data>
-        <display>
-        <title>测试6</title>
-        <pubTime>2018-01-01T07:25:03.365Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
           
         </display>
     </data>
