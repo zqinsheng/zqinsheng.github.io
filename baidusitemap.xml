@@ -4,18 +4,14 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%951/</loc>
-    <lastmod>2018-01-01T08:06:47.482Z</lastmod>
+    <loc>http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A64/</loc>
+    <lastmod>2018-01-01T08:59:41.620Z</lastmod>
     <data>
         <display>
-        <title>测试11111</title>
-        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        <title>啦啦啦4</title>
+        <pubTime>2016-12-01T10:14:08.000Z</pubTime>
         
         <tag>前端</tag>
-         
-        <tag>javascript</tag>
-         
-        <tag>jquery</tag>
          
          
            
@@ -28,8 +24,112 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A63/</loc>
+    <lastmod>2018-01-01T08:59:24.805Z</lastmod>
+    <data>
+        <display>
+        <title>哈哈哈哈</title>
+        <pubTime>2016-12-01T10:14:08.000Z</pubTime>
+        
+        <tag>jquery</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="jquery" url="http://yoursite.com/categories/jquery/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2014/12/01/%E5%95%A6%E5%95%A6%E5%95%A62/</loc>
+    <lastmod>2018-01-01T08:59:03.733Z</lastmod>
+    <data>
+        <display>
+        <title>啦啦啦2</title>
+        <pubTime>2014-12-01T10:14:08.000Z</pubTime>
+        
+        <tag>web</tag>
+         
+         
+           
+             
+              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A61/</loc>
+    <lastmod>2018-01-01T08:58:49.268Z</lastmod>
+    <data>
+        <display>
+        <title>啦啦啦1</title>
+        <pubTime>2013-12-01T10:14:08.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%881/</loc>
+    <lastmod>2018-01-01T08:56:05.678Z</lastmod>
+    <data>
+        <display>
+        <title>哈哈哈2</title>
+        <pubTime>2016-12-01T10:14:08.000Z</pubTime>
+        
+        <tag>哈哈哈2</tag>
+         
+         
+           
+             
+              <breadCrumb title="哈哈哈2" url="http://yoursite.com/categories/%E5%93%88%E5%93%88%E5%93%882/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%88/</loc>
+    <lastmod>2018-01-01T08:54:25.704Z</lastmod>
+    <data>
+        <display>
+        <title>啦啦啦4</title>
+        <pubTime>2016-12-01T10:14:08.000Z</pubTime>
+        
+        <tag>啦啦啦4</tag>
+         
+         
+           
+             
+              <breadCrumb title="啦啦啦4" url="http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A64/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%953/</loc>
-    <lastmod>2018-01-01T07:59:22.449Z</lastmod>
+    <lastmod>2018-01-01T08:39:58.312Z</lastmod>
     <data>
         <display>
         <title>测试33333</title>
@@ -37,6 +137,30 @@
         
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%951/</loc>
+    <lastmod>2018-01-01T08:06:47.482Z</lastmod>
+    <data>
+        <display>
+        <title>测试11111</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+        <tag>jquery</tag>
+         
+        <tag>javascript</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+          
         </display>
     </data>
     </url>
