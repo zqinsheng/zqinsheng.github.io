@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%957/</loc>
-    <lastmod>2018-01-01T07:28:19.758Z</lastmod>
+    <loc>http://yoursite.com/2018/01/01/%E6%B5%8B%E8%AF%957/</loc>
+    <lastmod>2018-01-01T07:34:55.834Z</lastmod>
     <data>
         <display>
         <title>测试6</title>
-        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        <pubTime>2018-01-01T07:25:03.365Z</pubTime>
         
         <tag>java</tag>
          
@@ -24,12 +24,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%956/</loc>
-    <lastmod>2018-01-01T07:27:04.104Z</lastmod>
+    <loc>http://yoursite.com/2015/12/01/%E6%B5%8B%E8%AF%956/</loc>
+    <lastmod>2018-01-01T07:34:45.002Z</lastmod>
     <data>
         <display>
         <title>测试5</title>
-        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        <pubTime>2015-12-01T10:14:08.000Z</pubTime>
         
         <tag>测试标签5</tag>
          
@@ -44,12 +44,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%955/</loc>
-    <lastmod>2018-01-01T07:26:51.399Z</lastmod>
+    <loc>http://yoursite.com/2014/10/31/%E6%B5%8B%E8%AF%955/</loc>
+    <lastmod>2018-01-01T07:34:32.523Z</lastmod>
     <data>
         <display>
         <title>测试5</title>
-        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        <pubTime>2014-10-31T10:14:08.000Z</pubTime>
         
         <tag>测试标签2</tag>
          
@@ -157,6 +157,7 @@
     </data>
     </url>
 
+    
     
     
     
