@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>周勤生个人网站</title>
+  <title>JasonZhou&#39;s Blog</title>
   
   <subtitle>创建于2017年12月31日</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>周勤生</name>
+    <name>JasonZhou</name>
     
   </author>
   
