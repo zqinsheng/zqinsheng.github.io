@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%953/</loc>
+    <lastmod>2018-01-02T15:00:06.378Z</lastmod>
+    <data>
+        <display>
+        <title>测试33333</title>
+        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/01/01/%E6%B5%8B%E8%AF%957/</loc>
     <lastmod>2018-01-01T16:59:21.892Z</lastmod>
     <data>
@@ -143,21 +158,6 @@
              
               <breadCrumb title="啦啦啦4" url="http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A64/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%953/</loc>
-    <lastmod>2018-01-01T08:39:58.312Z</lastmod>
-    <data>
-        <display>
-        <title>测试33333</title>
-        <pubTime>2017-12-31T10:14:08.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
