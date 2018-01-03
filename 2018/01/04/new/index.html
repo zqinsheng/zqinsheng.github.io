@@ -1,11 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search> 
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
-    
-    <entry>
-      <title><![CDATA[hello world ！]]></title>
-      <url>/2018/01/04/new/</url>
-      <content type="html"><![CDATA[<p>#aujaker 自动代码生成系统使用说明</p>
+  <title>hello world ！ | JasonZhou&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#aujaker 自动代码生成系统使用说明 ###aujaker 自动生成项目可使用三种方式  在线创建项目并生成 通过配置xml文件上传生成 通过上传excel文件生成     ###使用任意一种方式生成项目后即可下载项目    下载的文件包含可进行二次开发的项目源文件和可直接运行的jar文件    jar文件的使用方法（在安装了java环境的电脑上运行）     打开命令提示符，找到生成的ja">
+<meta name="keywords" content="测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello world ！">
+<meta property="og:url" content="http://yoursite.com/2018/01/04/new/index.html">
+<meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="#aujaker 自动代码生成系统使用说明 ###aujaker 自动生成项目可使用三种方式  在线创建项目并生成 通过配置xml文件上传生成 通过上传excel文件生成     ###使用任意一种方式生成项目后即可下载项目    下载的文件包含可进行二次开发的项目源文件和可直接运行的jar文件    jar文件的使用方法（在安装了java环境的电脑上运行）     打开命令提示符，找到生成的ja">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/09.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/10.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/12.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/13.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/14.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/15.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/01.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/02.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/03.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/04.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/05.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/06.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/08.png">
+<meta property="og:image" content="https://zqinsheng.github.io/aujaker_img/07.png">
+<meta property="og:updated_time" content="2018-01-03T17:50:29.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello world ！">
+<meta name="twitter:description" content="#aujaker 自动代码生成系统使用说明 ###aujaker 自动生成项目可使用三种方式  在线创建项目并生成 通过配置xml文件上传生成 通过上传excel文件生成     ###使用任意一种方式生成项目后即可下载项目    下载的文件包含可进行二次开发的项目源文件和可直接运行的jar文件    jar文件的使用方法（在安装了java环境的电脑上运行）     打开命令提示符，找到生成的ja">
+<meta name="twitter:image" content="https://zqinsheng.github.io/aujaker_img/09.png">
+  
+    <link rel="alternate" href="/atom.xml" title="JasonZhou&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">JasonZhou</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/works">
+                My Works
+            </a>
+            
+            <a class="nav-item" href="/about">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/works">
+                My Works
+            </a>
+            
+            <a class="nav-item flex-1" href="/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>hello world ！</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="/uploads/avatar.jpg">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> JasonZhou</span>
+                <span class="post-date sub-title">at: 2018-01-04</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/测试/">测试</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <p>#aujaker 自动代码生成系统使用说明</p>
 <p>###aujaker 自动生成项目可使用三种方式</p>
 <ol>
 <li>在线创建项目并生成</li>
@@ -242,372 +406,88 @@
 </tbody>
 </table>
 <hr>
-]]></content>
-      
-        <categories>
-            
-            <category> 测试 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试文章]]></title>
-      <url>/2018/01/01/%E6%B5%8B%E8%AF%957/</url>
-      <content type="html"><![CDATA[<p>Goodbye 2017, looking ahead to 2018</p>
-<ul>
-<li>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> java </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[End of the 2017]]></title>
-      <url>/2017/12/31/Goodbye-2017,looking-ahead-to-2018/</url>
-      <content type="html"><![CDATA[<p>Goodbye 2017, looking ahead to 2018</p>
-<ul>
-<li><p>时光如青春一般飞逝，2017悄然无声已结束，新年的钟声即将敲响</p>
-<p>这一年，没有生活波澜的澎湃汹涌与大风大浪，但也不少阴沟翻船</p>
-<p>无处安放的青春必将在经历许多磨难与挣扎后得到绽放</p>
-<p>2018:新的开始，新的学习，新的挑战。</p>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 生活随笔 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 生活随笔 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试4]]></title>
-      <url>/2017/12/31/%E6%B5%8B%E8%AF%954/</url>
-      <content type="html"><![CDATA[<p>Goodbye 2017, looking ahead to 2018</p>
-<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 测试标签1 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 测试标签1 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试33333]]></title>
-      <url>/2017/12/31/%E6%B5%8B%E8%AF%953/</url>
-      <content type="html"><![CDATA[<p>1测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测测试3333333333333333啊士大夫打发打发打发打发打发打发打发333333333333333333333333测<br>33333测试33333333333阿斯顿烦烦烦烦烦烦阿三地方烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦阿斯蒂芬<br>阿三地方烦烦烦烦烦烦烦烦烦烦烦烦烦烦烦阿斯顿烦烦烦烦烦烦烦烦烦烦烦烦啊手动阀手动阀阿斯<br>阿三地方帆帆帆帆帆帆帆帆是答复烦烦烦烦烦烦烦烦烦十多个灌灌灌灌灌灌灌灌岁的尕阿斯顿发射<br>时代噶啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊时代阿斯顿发士大夫啊十大撒旦飞洒地方撒旦个撒大阿<br>撒地方帆帆帆帆帆帆帆帆帆帆帆帆帆帆帆帆撒地方帆帆帆帆帆帆帆帆帆帆帆帆帆帆帆帆撒旦发顺丰</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试2]]></title>
-      <url>/2017/12/31/%E6%B5%8B%E8%AF%952/</url>
-      <content type="html"><![CDATA[<p>Goodbye 2017, looking ahead to 2018</p>
-<ul>
-<li>测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222测试222222222222222222222222222222222</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> java </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试11111]]></title>
-      <url>/2017/12/31/%E6%B5%8B%E8%AF%951/</url>
-      <content type="html"><![CDATA[<ul>
-<li>测试11111111111111111111111111111111111111111测试1111111111111111111111111111111<br>1111111111测试11111111111111111111111111111111111111111测试111111111111111111111111111<br>11111111111111测试11111111111111111111111111111111111111111测试1111111111111111<br>1111111111111111111111111测试11111111111111111111111111111111111111111测试11<br>111111111111111111111111111111111111111测试111111111111111111111111111<br>11111111111111测试11111111111111111111111111111111111111111测试11<br>111111111111111111111111111111111111111测试11111111111111111111111111<br>111111111111111测试11111111111111111111111111111111111111111测试11111111<br>111111111111111111111111111111111测试1111111111111111111111111111111111111<br>1111测试11111111111111111111111111111111111111111测试111111111111111111111<br>1111111111111111111测试11111111111111111111111111111111111111111测试11111111<br>111111111111111111111111111111111测试111111111111111111111111111111111111111<br>11测试11111111111111111111111111111111111111111测试11111111111111111111111<br>111111111111111111测试11111111111111111111111111111111111111111测试111111111<br>11111111111111111111111111111111测试11111111111111111111111111111111111111111<br>测试11111111111111111111111111111111111111111测试11111111111111111111111111111<br>111111111111测试11111111111111111111111111111111111111111测试11111111111111111<br>111111111111111111111111测试11111111111111111111111111111111111111111测试11111<br>111111111111111111111111111111111111测试11111111111111111111111111111111111111<br>111测试11111111111111111111111111111111111111111测试111111111111111111111111111<br>11111111111111测试11111111111111111111111111111111111111111测试111111111111111<br>11111111111111111111111111测试11111111111111111111111111111111111111111测试111<br>11111111111111111111111111111111111111测试111111111111111111111111111111111111<br>11111测试11111111111111111111111111111111111111111测试111111111111111111111111<br>11111111111111111测试11111111111111111111111111111111111111111测试111111111111<br>11111111111111111111111111111测试11111111111111111111111111111111111111111测试</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> jquery </tag>
-            
-            <tag> javascript </tag>
-            
-            <tag> 前端 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[哈哈哈哈]]></title>
-      <url>/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A63/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克<br>系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是<br>打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> jquery </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> jquery </tag>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[啦啦啦4]]></title>
-      <url>/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A64/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克<br>系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是<br>打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[啦啦啦4]]></title>
-      <url>/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%88/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克<br>系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是<br>打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 啦啦啦4 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 啦啦啦4 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[哈哈哈2]]></title>
-      <url>/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%881/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克<br>系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是<br>打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 哈哈哈2 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 哈哈哈2 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试5]]></title>
-      <url>/2015/12/01/%E6%B5%8B%E8%AF%956/</url>
-      <content type="html"><![CDATA[<p>Goodbye 2017, looking ahead to 2018</p>
-<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 测试标签5 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 测试标签5 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[啦啦啦2]]></title>
-      <url>/2014/12/01/%E5%95%A6%E5%95%A6%E5%95%A62/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克<br>系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是<br>打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> web </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[测试5]]></title>
-      <url>/2014/10/31/%E6%B5%8B%E8%AF%955/</url>
-      <content type="html"><![CDATA[<p>Goodbye 2017, looking ahead to 2018</p>
-<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 测试标签2 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 测试标签2 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[啦啦啦1]]></title>
-      <url>/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A61/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克<br>系啊圣诞快乐金克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是<br>打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> java </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> java </tag>
-            
-            <tag> css </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[啦啦啦]]></title>
-      <url>/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A6/</url>
-      <content type="html"><![CDATA[<ul>
-<li>啊考虑到房价ask了ask领导附件是卡掉了jfk鲁大师就开发了受打击啊卡拉圣诞节啊老师的课就拉斯达克系啊圣诞快乐金<br>克拉撒旦系啊圣诞快乐系啊反抗拉萨大家看lads就啊圣诞快乐就阿喀琉斯大家卡拉圣诞节付款了是打韩国拉绳电话</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 啦啦啦 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 啦啦啦 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-  
-  
-</search>
+
+        </div>
+        <div class="post-reply">
+            
+            
+            <div id="disqus_thread" style="width: 80%; margin: 0 auto;"></div>
+                <script>
+
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    /*
+                     var disqus_config = function () {
+                     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                     };
+                     */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://haojen.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        Copyright © JasonZhou 2017<!--2018-->,
+	 <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by Haojen Ma,
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/search_core.js"></script>
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

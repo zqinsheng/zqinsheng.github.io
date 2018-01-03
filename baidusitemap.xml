@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/04/new/</loc>
+    <lastmod>2018-01-03T17:50:29.614Z</lastmod>
+    <data>
+        <display>
+        <title>hello world ！</title>
+        <pubTime>2018-01-04T10:14:08.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%953/</loc>
     <lastmod>2018-01-02T15:00:06.378Z</lastmod>
     <data>
