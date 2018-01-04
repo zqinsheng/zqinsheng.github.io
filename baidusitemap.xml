@@ -4,46 +4,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(5)/</loc>
-    <lastmod>2018-01-03T17:50:29.614Z</lastmod>
-    <data>
-        <display>
-        <title>hello world ！</title>
-        <pubTime>2018-01-04T10:14:08.000Z</pubTime>
-        
-        <tag>测试</tag>
-         
-         
-           
-             
-              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/04/new/</loc>
-    <lastmod>2018-01-03T17:50:29.614Z</lastmod>
-    <data>
-        <display>
-        <title>hello world ！</title>
-        <pubTime>2018-01-04T10:14:08.000Z</pubTime>
-        
-        <tag>测试</tag>
-         
-         
-           
-             
-              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(8)/</loc>
     <lastmod>2018-01-03T17:50:29.614Z</lastmod>
     <data>
@@ -64,7 +24,27 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(7)/</loc>
+    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(2)/</loc>
+    <lastmod>2018-01-03T17:50:29.614Z</lastmod>
+    <data>
+        <display>
+        <title>hello world ！</title>
+        <pubTime>2018-01-04T10:14:08.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(5)/</loc>
     <lastmod>2018-01-03T17:50:29.614Z</lastmod>
     <data>
         <display>
@@ -85,6 +65,26 @@
     
   <url>
     <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(6)/</loc>
+    <lastmod>2018-01-03T17:50:29.614Z</lastmod>
+    <data>
+        <display>
+        <title>hello world ！</title>
+        <pubTime>2018-01-04T10:14:08.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(7)/</loc>
     <lastmod>2018-01-03T17:50:29.614Z</lastmod>
     <data>
         <display>
@@ -144,7 +144,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(3)/</loc>
+    <loc>http://yoursite.com/2018/01/04/new/</loc>
     <lastmod>2018-01-03T17:50:29.614Z</lastmod>
     <data>
         <display>
@@ -164,7 +164,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(2)/</loc>
+    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC%20(3)/</loc>
     <lastmod>2018-01-03T17:50:29.614Z</lastmod>
     <data>
         <display>
