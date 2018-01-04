@@ -134,6 +134,7 @@
     <div id="header_box" class="header-box"></div>
 </header>
 <section>
+	
     <div class="container post-box">
         <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
             <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
@@ -186,6 +187,20 @@
             
             
         </div>
+	
+	<div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% elseif theme.sharesdk %}
+        {% include '_partials/share/sharesdk.swig' %}
+      {% endif %}
+    </div>
     </div>
 </section>
 <script>
