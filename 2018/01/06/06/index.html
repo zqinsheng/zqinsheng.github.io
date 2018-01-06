@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="www.baidu.com#http://yoursite.com">
-  <title>Category: java | JasonZhou&#39;s Blog</title>
+  <title>测试 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonZhou&#39;s Blog">
-<meta property="og:url" content="www.baidu.com#http://yoursite.com/categories/java/index.html">
+  <meta name="description" content="通过上几讲的内容，我们基本掌握了Spring Data JPA的大量基础操作了，并且也可以完成一些简单的封装，今天我们要解决SpringDataJPA剩下的一些小问题，有如下一些知识点：  封装排序操作 封装分页操作  在SpringDataJPA中排序操作已经演示的过了，主要是通过Sort类和Order类来组成，Sort对象的创建需要传入Order对象或者Order列表，通过Order确定排序的">
+<meta name="keywords" content="测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试">
+<meta property="og:url" content="www.baidu.com#http://yoursite.com/2018/01/06/06/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="通过上几讲的内容，我们基本掌握了Spring Data JPA的大量基础操作了，并且也可以完成一些简单的封装，今天我们要解决SpringDataJPA剩下的一些小问题，有如下一些知识点：  封装排序操作 封装分页操作  在SpringDataJPA中排序操作已经演示的过了，主要是通过Sort类和Order类来组成，Sort对象的创建需要传入Order对象或者Order列表，通过Order确定排序的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-06T07:35:49.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonZhou&#39;s Blog">
+<meta name="twitter:title" content="测试">
+<meta name="twitter:description" content="通过上几讲的内容，我们基本掌握了Spring Data JPA的大量基础操作了，并且也可以完成一些简单的封装，今天我们要解决SpringDataJPA剩下的一些小问题，有如下一些知识点：  封装排序操作 封装分页操作  在SpringDataJPA中排序操作已经演示的过了，主要是通过Sort类和Order类来组成，Sort对象的创建需要传入Order对象或者Order列表，通过Order确定排序的">
   
     <link rel="alternative" href="/atom.xml" title="JasonZhou&#39;s Blog" type="application/atom+xml">
   
@@ -162,134 +167,217 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-06" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/01/测试7/" class="archive-article-date">
-  	<time datetime="2018-01-01T07:25:03.365Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/01/测试7/">测试文章</a>
+    <h1 class="article-title" itemprop="name">
+      测试
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/06/06/" class="archive-article-date">
+  	<time datetime="2018-01-06T12:14:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过上几讲的内容，我们基本掌握了Spring Data JPA的大量基础操作了，并且也可以完成一些简单的封装，今天我们要解决SpringDataJPA剩下的一些小问题，有如下一些知识点：</p>
+<ul>
+<li>封装排序操作</li>
+<li>封装分页操作</li>
+</ul>
+<p>在SpringDataJPA中排序操作已经演示的过了，主要是通过Sort类和Order类来组成，Sort对象的创建需要传入Order对象或者Order列表，通过Order确定排序的字段和方式。这种方式在调用起来个人感觉稍微有些麻烦，所以进行了比较简单的封装，封装代码如下:<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleSortBuilder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 调用的时候使用SimpleSortBuilder.generateSort("name","xh_d");表示先以name升序，之后以xh降序</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Sort <span class="title">generateSort</span><span class="params">(String... fields)</span> </span>&#123;</span><br><span class="line">		List&lt;Order&gt; orders = <span class="keyword">new</span> ArrayList&lt;Order&gt;();</span><br><span class="line">		<span class="keyword">for</span>(String f:fields) &#123;</span><br><span class="line">			orders.add(generateOrder(f));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Sort(orders);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Order <span class="title">generateOrder</span><span class="params">(String f)</span> </span>&#123;</span><br><span class="line">		Order order = <span class="keyword">null</span>;</span><br><span class="line">		String[] ff = f.split(<span class="string">"_"</span>);</span><br><span class="line">		<span class="keyword">if</span>(ff.length&gt;=<span class="number">2</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(ff[<span class="number">1</span>].equals(<span class="string">"d"</span>)) &#123;</span><br><span class="line">				order = <span class="keyword">new</span> Order(Direction.DESC,ff[<span class="number">0</span>]);</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				order = <span class="keyword">new</span> Order(Direction.ASC,ff[<span class="number">0</span>]);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> order;</span><br><span class="line">		&#125;</span><br><span class="line">		order = <span class="keyword">new</span> Order(f);</span><br><span class="line">		<span class="keyword">return</span> order;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>封装思路很简单，主要是希望通过约定的名称来处理，这样相对简单一些，测试代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSort</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">//使用了上一讲封装的Specification的查询</span></span><br><span class="line">	List&lt;Student&gt; stus = studentRepository.findAll(</span><br><span class="line">			<span class="keyword">new</span> SimpleSpecificationBuilder&lt;Student&gt;(<span class="string">"address"</span>, <span class="string">"="</span>, <span class="string">"zt"</span>).generateSpecification(),</span><br><span class="line">			SimpleSortBuilder.generateSort(<span class="string">"id_d"</span>));</span><br><span class="line"></span><br><span class="line">	Assert.assertEquals(<span class="number">7</span>, stus.get(<span class="number">0</span>).getId());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分页的封装思路就更简单了，个人仅仅只是封装了一个size而已，因为size经常是固定的，其他什么操作都没有做，如果大家有更好的封装方式，欢迎一起交流。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 仅仅只是对size进行了封装，太过简单</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> konghao</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimplePageBuilder</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 以常量的形式存储，在实际的运用中应该从properties文件中取得，思路都一样</span></span><br><span class="line"><span class="comment">	 * */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> size = <span class="number">15</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Pageable <span class="title">generate</span><span class="params">(<span class="keyword">int</span> page,<span class="keyword">int</span> size,Sort sort)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(sort==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">new</span> PageRequest(page, size);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> PageRequest(page, size, sort);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Pageable <span class="title">generate</span><span class="params">(<span class="keyword">int</span> page)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> generate(page,size,<span class="keyword">null</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Pageable <span class="title">generate</span><span class="params">(<span class="keyword">int</span> page,Sort sort)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> generate(page,size,sort);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上封装非常的简单，基本没有做任何实质性的操作，以下是测试代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//注意:page是从0开始的</span></span><br><span class="line">	Page&lt;Student&gt; stus = studentRepository.findAll(</span><br><span class="line">			<span class="keyword">new</span> SimpleSpecificationBuilder&lt;Student&gt;(<span class="string">"address"</span>,<span class="string">"="</span>,<span class="string">"zt"</span>).generateSpecification(),</span><br><span class="line">			SimplePageBuilder.generate(<span class="number">0</span>, SimpleSortBuilder.generateSort(<span class="string">"name_d"</span>)));</span><br><span class="line">	Assert.assertEquals(<span class="number">1</span>, stus.getTotalPages());</span><br><span class="line">	Assert.assertEquals(<span class="number">4</span>, stus.getTotalElements());</span><br><span class="line">	Assert.assertEquals(<span class="number">5</span>, stus.getContent().get(<span class="number">0</span>).getId());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上就是个人对分页和排序的封装，在实际的生产环境中使用还是比较顺利的。这里需要特别提一下，在SpringDataJPA中还有一个钟Querydsl的查询方式，这种方式基于对象模型来进行查询的，依然也有很大的余地对其进行封装，有兴趣的朋友可以自己找这部分的知识来学习一下，我们就不详细介绍了。下一讲我们具体解决SpringDataJPA的事务、批量更新和关联对象查询的问题。</p>
+<p>本文的源代码在这里:<a href="https://github.com/ynkonghao/resource/tree/master/src/springboot/05" target="_blank" rel="noopener">源代码</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        			<a href="/categories/测试//" class="article-tag-list-link color3">测试</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:www.baidu.com#http://yoursite.com/2018/01/06/06/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2013" class="archive-year">2013</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/06/音乐/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">父亲的散文诗</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2013/12/01/啦啦啦1/" class="archive-article-date">
-  	<time datetime="2013-12-01T10:14:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2013-12-01</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2013/12/01/啦啦啦1/">啦啦啦1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+	
+   
+  <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2154545"></script>
+<!-- UY END -->
+  		
+
+  
 
 
           </div>
@@ -312,10 +400,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

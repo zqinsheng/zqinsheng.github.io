@@ -4,7 +4,27 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/05/%E8%AE%A4%E8%AF%86/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/06/06/</loc>
+    <lastmod>2018-01-06T07:35:49.585Z</lastmod>
+    <data>
+        <display>
+        <title>测试</title>
+        <pubTime>2018-01-06T12:14:08.000Z</pubTime>
+        
+        <tag>测试</tag>
+         
+         
+           
+             
+              <breadCrumb title="测试" url="www.baidu.com#http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/05/%E8%AE%A4%E8%AF%86/</loc>
     <lastmod>2018-01-05T18:38:56.097Z</lastmod>
     <data>
         <display>
@@ -16,7 +36,7 @@
          
            
              
-              <breadCrumb title="音乐" url="http://yoursite.com/categories/%E9%9F%B3%E4%B9%90/"/>
+              <breadCrumb title="音乐" url="www.baidu.com#http://yoursite.com/categories/%E9%9F%B3%E4%B9%90/"/>
           
         </display>
     </data>
@@ -24,7 +44,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/06/%E9%9F%B3%E4%B9%90/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/06/%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2018-01-05T18:35:57.219Z</lastmod>
     <data>
         <display>
@@ -36,7 +56,7 @@
          
            
              
-              <breadCrumb title="音乐" url="http://yoursite.com/categories/%E9%9F%B3%E4%B9%90/"/>
+              <breadCrumb title="音乐" url="www.baidu.com#http://yoursite.com/categories/%E9%9F%B3%E4%B9%90/"/>
           
         </display>
     </data>
@@ -44,7 +64,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/04/new%20-%20%E5%89%AF%E6%9C%AC/</loc>
     <lastmod>2018-01-05T18:24:26.658Z</lastmod>
     <data>
         <display>
@@ -56,7 +76,7 @@
          
            
              
-              <breadCrumb title="音乐" url="http://yoursite.com/categories/%E9%9F%B3%E4%B9%90/"/>
+              <breadCrumb title="音乐" url="www.baidu.com#http://yoursite.com/categories/%E9%9F%B3%E4%B9%90/"/>
           
         </display>
     </data>
@@ -64,7 +84,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/%E5%8C%97%E6%96%B9/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/04/%E5%8C%97%E6%96%B9/</loc>
     <lastmod>2018-01-05T18:24:09.842Z</lastmod>
     <data>
         <display>
@@ -76,7 +96,7 @@
          
            
              
-              <breadCrumb title="北" url="http://yoursite.com/categories/%E5%8C%97/"/>
+              <breadCrumb title="北" url="www.baidu.com#http://yoursite.com/categories/%E5%8C%97/"/>
           
         </display>
     </data>
@@ -84,7 +104,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/01/04/new/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/04/new/</loc>
     <lastmod>2018-01-05T18:11:46.011Z</lastmod>
     <data>
         <display>
@@ -96,16 +116,15 @@
          
            
              
-              <breadCrumb title="测试" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+              <breadCrumb title="测试" url="www.baidu.com#http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
           
         </display>
     </data>
     </url>
 
     
-    
   <url>
-    <loc>http://yoursite.com/2018/01/01/%E6%B5%8B%E8%AF%957/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2018/01/01/%E6%B5%8B%E8%AF%957/</loc>
     <lastmod>2018-01-01T16:59:21.892Z</lastmod>
     <data>
         <display>
@@ -117,7 +136,7 @@
          
            
              
-              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+              <breadCrumb title="java" url="www.baidu.com#http://yoursite.com/categories/java/"/>
           
         </display>
     </data>
@@ -126,7 +145,7 @@
     
     
   <url>
-    <loc>http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A64/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A64/</loc>
     <lastmod>2018-01-01T08:59:41.620Z</lastmod>
     <data>
         <display>
@@ -138,7 +157,7 @@
          
            
              
-              <breadCrumb title="前端" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="前端" url="www.baidu.com#http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -146,7 +165,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A63/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2016/12/01/%E5%95%A6%E5%95%A6%E5%95%A63/</loc>
     <lastmod>2018-01-01T08:59:24.805Z</lastmod>
     <data>
         <display>
@@ -160,7 +179,7 @@
          
            
              
-              <breadCrumb title="jquery" url="http://yoursite.com/categories/jquery/"/>
+              <breadCrumb title="jquery" url="www.baidu.com#http://yoursite.com/categories/jquery/"/>
           
         </display>
     </data>
@@ -168,7 +187,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2014/12/01/%E5%95%A6%E5%95%A6%E5%95%A62/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2014/12/01/%E5%95%A6%E5%95%A6%E5%95%A62/</loc>
     <lastmod>2018-01-01T08:59:03.733Z</lastmod>
     <data>
         <display>
@@ -180,7 +199,7 @@
          
            
              
-              <breadCrumb title="web" url="http://yoursite.com/categories/web/"/>
+              <breadCrumb title="web" url="www.baidu.com#http://yoursite.com/categories/web/"/>
           
         </display>
     </data>
@@ -188,7 +207,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A61/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A61/</loc>
     <lastmod>2018-01-01T08:58:49.268Z</lastmod>
     <data>
         <display>
@@ -202,7 +221,7 @@
          
            
              
-              <breadCrumb title="java" url="http://yoursite.com/categories/java/"/>
+              <breadCrumb title="java" url="www.baidu.com#http://yoursite.com/categories/java/"/>
           
         </display>
     </data>
@@ -210,7 +229,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%881/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%881/</loc>
     <lastmod>2018-01-01T08:56:05.678Z</lastmod>
     <data>
         <display>
@@ -222,7 +241,7 @@
          
            
              
-              <breadCrumb title="哈哈哈2" url="http://yoursite.com/categories/%E5%93%88%E5%93%88%E5%93%882/"/>
+              <breadCrumb title="哈哈哈2" url="www.baidu.com#http://yoursite.com/categories/%E5%93%88%E5%93%88%E5%93%882/"/>
           
         </display>
     </data>
@@ -230,7 +249,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%88/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2016/12/01/%E5%93%88%E5%93%88%E5%93%88%E5%93%88/</loc>
     <lastmod>2018-01-01T08:54:25.704Z</lastmod>
     <data>
         <display>
@@ -242,7 +261,7 @@
          
            
              
-              <breadCrumb title="啦啦啦4" url="http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A64/"/>
+              <breadCrumb title="啦啦啦4" url="www.baidu.com#http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A64/"/>
           
         </display>
     </data>
@@ -250,7 +269,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A6/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2013/12/01/%E5%95%A6%E5%95%A6%E5%95%A6/</loc>
     <lastmod>2018-01-01T07:55:50.419Z</lastmod>
     <data>
         <display>
@@ -262,7 +281,7 @@
          
            
              
-              <breadCrumb title="啦啦啦" url="http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A6/"/>
+              <breadCrumb title="啦啦啦" url="www.baidu.com#http://yoursite.com/categories/%E5%95%A6%E5%95%A6%E5%95%A6/"/>
           
         </display>
     </data>
@@ -270,7 +289,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/12/01/%E6%B5%8B%E8%AF%956/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2015/12/01/%E6%B5%8B%E8%AF%956/</loc>
     <lastmod>2018-01-01T07:34:45.002Z</lastmod>
     <data>
         <display>
@@ -282,7 +301,7 @@
          
            
              
-              <breadCrumb title="测试标签5" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE5/"/>
+              <breadCrumb title="测试标签5" url="www.baidu.com#http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE5/"/>
           
         </display>
     </data>
@@ -290,7 +309,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2014/10/31/%E6%B5%8B%E8%AF%955/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2014/10/31/%E6%B5%8B%E8%AF%955/</loc>
     <lastmod>2018-01-01T07:34:32.523Z</lastmod>
     <data>
         <display>
@@ -302,7 +321,7 @@
          
            
              
-              <breadCrumb title="测试标签2" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE2/"/>
+              <breadCrumb title="测试标签2" url="www.baidu.com#http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE2/"/>
           
         </display>
     </data>
@@ -310,7 +329,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%954/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2017/12/31/%E6%B5%8B%E8%AF%954/</loc>
     <lastmod>2018-01-01T07:26:31.153Z</lastmod>
     <data>
         <display>
@@ -322,7 +341,7 @@
          
            
              
-              <breadCrumb title="测试标签1" url="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE1/"/>
+              <breadCrumb title="测试标签1" url="www.baidu.com#http://yoursite.com/categories/%E6%B5%8B%E8%AF%95%E6%A0%87%E7%AD%BE1/"/>
           
         </display>
     </data>
@@ -330,7 +349,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/12/31/Goodbye-2017,looking-ahead-to-2018/</loc>
+    <loc>www.baidu.com#http://yoursite.com/2017/12/31/Goodbye-2017,looking-ahead-to-2018/</loc>
     <lastmod>2018-01-01T07:23:55.234Z</lastmod>
     <data>
         <display>
@@ -342,7 +361,7 @@
          
            
              
-              <breadCrumb title="生活随笔" url="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+              <breadCrumb title="生活随笔" url="www.baidu.com#http://yoursite.com/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
