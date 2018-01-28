@@ -110,5 +110,16 @@ jsonContent:
     link: false
     permalink: false
     excerpt: false
-    categories: false
+    categories: true
     tags: true
+
+# Extensions rss
+## Plugins: http://hexo.io/plugins/
+#RSS¶©ÔÄ
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
