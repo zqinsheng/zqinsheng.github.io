@@ -91,7 +91,7 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/zqinsheng/zqinsheng.github.io.git
+  repository: git@github.com:zqinsheng/zqinsheng.github.io.git
   branch: master
 
 jsonContent:
@@ -110,16 +110,5 @@ jsonContent:
     link: false
     permalink: false
     excerpt: false
-    categories: true
+    categories: false
     tags: true
-
-# Extensions rss
-## Plugins: http://hexo.io/plugins/
-#RSS¶©ÔÄ
-plugin:
-- hexo-generator-feed
-#Feed Atom
-feed:
-type: atom
-path: atom.xml
-limit: 20
