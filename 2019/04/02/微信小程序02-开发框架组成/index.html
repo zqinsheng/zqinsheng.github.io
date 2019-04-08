@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/007HSgDpgy1g1oo9naxkyj308307ia9y.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1qlbfsuawj30d7065q2z.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1qlbj7ud8j307s09l3yi.jpg">
-<meta property="og:updated_time" content="2019-04-08T06:41:20.443Z">
+<meta property="og:updated_time" content="2019-04-08T06:59:13.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序-开发框架组成">
 <meta name="twitter:description" content="小程序代码组成在我们新建好一个小程序项目后，开发工具帮我们把基本的结构目录搭建好了，我们不难发现，在每一个文件夹下面都有四个文件，每一个页面都对应着四个文件   这些文件就是小程序的组成元素,小程序由 配置代码JSON文件、模板代码 WXML 文件、样式代码 WXSS文件以及逻辑代码 JavaScript文件组成。每一个文件都发挥着各自的作用，下面来详细介绍每一个文件所扮演的角色。   一、WXM">
@@ -250,6 +250,7 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <ul>
 <li>标签自定义属性  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view test-data-name=&quot;hello&quot;&gt; &lt;/view&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -294,14 +295,15 @@ var _hmt = _hmt || [];
 <h3 id="JSON-数字"><a href="#JSON-数字" class="headerlink" title="JSON 数字"></a>JSON 数字</h3><p>JSON 数字可以是整型或者浮点型：<br>存储年龄为30:<br><code>{ &quot;age&quot;:30 }</code></p>
 <h3 id="JSON-对象"><a href="#JSON-对象" class="headerlink" title="JSON 对象"></a>JSON 对象</h3><p>JSON 对象在大括号（{}）中书写：<br>对象可以包含多个名称/值对：<br>存储小明这个对象:<br><code>{ &quot;name&quot;:&quot;小明&quot; , &quot;age&quot;:18,&quot;gender&quot;:&quot;男&quot;}</code></p>
 <h3 id="JSON-数组"><a href="#JSON-数组" class="headerlink" title="JSON 数组"></a>JSON 数组</h3><p>JSON 数组在中括号中书写：<br>数组可包含多个<strong>对象</strong>：<br>存储三个学生的信息：  </p>
-<pre><code>{
-&quot;student&quot;: [
-{ &quot;name&quot;:&quot;小明&quot; , &quot;age&quot;:18 },
-{ &quot;name&quot;:&quot;小王&quot; , &quot;age&quot;:20 },
-{ &quot;name&quot;:&quot;小小李&quot; , &quot;age&quot;:19 }
+<pre><code class="json">{
+<span class="attr">"student"</span>: [
+{ <span class="attr">"name"</span>:<span class="string">"小明"</span> , <span class="attr">"age"</span>:<span class="number">18</span> },
+{ <span class="attr">"name"</span>:<span class="string">"小王"</span> , <span class="attr">"age"</span>:<span class="number">20</span> },
+{ <span class="attr">"name"</span>:<span class="string">"小小李"</span> , <span class="attr">"age"</span>:<span class="number">19</span> }
 ]
 }
-</code></pre><h3 id="JSON-布尔值"><a href="#JSON-布尔值" class="headerlink" title="JSON 布尔值"></a>JSON 布尔值</h3><p>JSON 布尔值可以是 true 或者 false：<code>{ &quot;flag&quot;:true }</code>  </p>
+</code></pre>
+<h3 id="JSON-布尔值"><a href="#JSON-布尔值" class="headerlink" title="JSON 布尔值"></a>JSON 布尔值</h3><p>JSON 布尔值可以是 true 或者 false：<code>{ &quot;flag&quot;:true }</code>  </p>
 <h3 id="JSON-null"><a href="#JSON-null" class="headerlink" title="JSON null"></a>JSON null</h3><p>JSON 可以设置 null 值：<code>address:null</code></p>
 <p>如果对json语法陌生的，请先学习json语法！</p>
 

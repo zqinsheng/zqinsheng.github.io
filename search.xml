@@ -59,6 +59,7 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <ul>
 <li>标签自定义属性  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view test-data-name=&quot;hello&quot;&gt; &lt;/view&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -103,14 +104,15 @@
 <h3 id="JSON-数字"><a href="#JSON-数字" class="headerlink" title="JSON 数字"></a>JSON 数字</h3><p>JSON 数字可以是整型或者浮点型：<br>存储年龄为30:<br><code>{ &quot;age&quot;:30 }</code></p>
 <h3 id="JSON-对象"><a href="#JSON-对象" class="headerlink" title="JSON 对象"></a>JSON 对象</h3><p>JSON 对象在大括号（{}）中书写：<br>对象可以包含多个名称/值对：<br>存储小明这个对象:<br><code>{ &quot;name&quot;:&quot;小明&quot; , &quot;age&quot;:18,&quot;gender&quot;:&quot;男&quot;}</code></p>
 <h3 id="JSON-数组"><a href="#JSON-数组" class="headerlink" title="JSON 数组"></a>JSON 数组</h3><p>JSON 数组在中括号中书写：<br>数组可包含多个<strong>对象</strong>：<br>存储三个学生的信息：  </p>
-<pre><code>{
-&quot;student&quot;: [
-{ &quot;name&quot;:&quot;小明&quot; , &quot;age&quot;:18 },
-{ &quot;name&quot;:&quot;小王&quot; , &quot;age&quot;:20 },
-{ &quot;name&quot;:&quot;小小李&quot; , &quot;age&quot;:19 }
+<pre><code class="json">{
+<span class="attr">"student"</span>: [
+{ <span class="attr">"name"</span>:<span class="string">"小明"</span> , <span class="attr">"age"</span>:<span class="number">18</span> },
+{ <span class="attr">"name"</span>:<span class="string">"小王"</span> , <span class="attr">"age"</span>:<span class="number">20</span> },
+{ <span class="attr">"name"</span>:<span class="string">"小小李"</span> , <span class="attr">"age"</span>:<span class="number">19</span> }
 ]
 }
-</code></pre><h3 id="JSON-布尔值"><a href="#JSON-布尔值" class="headerlink" title="JSON 布尔值"></a>JSON 布尔值</h3><p>JSON 布尔值可以是 true 或者 false：<code>{ &quot;flag&quot;:true }</code>  </p>
+</code></pre>
+<h3 id="JSON-布尔值"><a href="#JSON-布尔值" class="headerlink" title="JSON 布尔值"></a>JSON 布尔值</h3><p>JSON 布尔值可以是 true 或者 false：<code>{ &quot;flag&quot;:true }</code>  </p>
 <h3 id="JSON-null"><a href="#JSON-null" class="headerlink" title="JSON null"></a>JSON null</h3><p>JSON 可以设置 null 值：<code>address:null</code></p>
 <p>如果对json语法陌生的，请先学习json语法！</p>
 ]]></content>
