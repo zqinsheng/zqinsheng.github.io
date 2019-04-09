@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>JasonZhou&#39;s Blog</title>
   
-  <subtitle>hello world !</subtitle>
+  <subtitle>Stay Hungry.  Stay Foolish.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zqinsheng.github.io/"/>
-  <updated>2019-04-08T06:59:13.715Z</updated>
+  <updated>2019-04-09T14:06:02.223Z</updated>
   <id>https://zqinsheng.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序-WXML特性之数据绑定</title>
+    <link href="https://zqinsheng.github.io/2019/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F03-WXML%E7%89%B9%E6%80%A7%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/"/>
+    <id>https://zqinsheng.github.io/2019/04/07/微信小程序03-WXML特性之数据绑定/</id>
+    <published>2019-04-07T15:25:25.000Z</published>
+    <updated>2019-04-09T14:06:02.223Z</updated>
+    
+    <content type="html"><![CDATA[<p>在对用户呈现的界面中，用户所看到的内容往往会随着操作的数据不同而不同，这就要求界面呈现给用户的东西要动态变化，界面要随着用户的操作动态渲染，这就要求我们要有动态去改变界面的能力。在小程序中，通过WXML的数据绑定功能可以动态的渲染界面。<br><a id="more"></a></p><h4 id="一个简单的例子"><a href="#一个简单的例子" class="headerlink" title="一个简单的例子"></a>一个简单的例子</h4><p>页面上的动态数据都来自于对应页面JS文件中Page()函数的data对象,而我们绑定数据用的是mustache语法:<strong></strong>，通过这样的方式就可以取到对应变量的值。<br>wxml可以绑定文本、数字、布尔等类型的值<br>例如:在index.wxml和index.js中加入如下代码，我们依然可以在界面中显示hello world，当message对应的变量值改变的时候，界面上呈现的值也会随之改变：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;text&gt;信息：&#123;&#123;message&#125;&#125;&lt;/text&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">   message:&quot;hello world&quot;</span><br><span class="line"> &#125;)</span><br><span class="line"></span><br><span class="line">      &lt;!-- 输出 hello world --&gt;</span><br></pre></td></tr></table></figure></p><h4 id="绑定标签属性值"><a href="#绑定标签属性值" class="headerlink" title="绑定标签属性值"></a>绑定标签属性值</h4><p>wxml不仅可以绑定文本的值，还可以动态绑定标签的属性值<br>例如：我们自定义一个属性data-name为它绑定值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">&lt;text data-name=&quot;&#123;&#123;dataName&#125;&#125;&quot;&gt;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">   dataName:&quot;jason&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p><em>这里特别注意我们所有的属性和组件都要求用小写</em>  </p><h4 id="逻辑语法"><a href="#逻辑语法" class="headerlink" title="逻辑语法"></a>逻辑语法</h4><p><strong>三元运算</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;text&gt;&#123;&#123;a&gt;1 ? &quot;a大于1&quot; : &quot;a小于1&quot;&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">  a:3</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">    &lt;!-- 输出 a大于1 --&gt;</span><br></pre></td></tr></table></figure></p><p><strong>算术运算</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;text&gt;&#123;&#123;a+b&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">  a:3,</span><br><span class="line">  b:2</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">      &lt;!-- 输出 5 --&gt;</span><br></pre></td></tr></table></figure></p><p><strong>字符串拼接</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;text&gt;&#123;&#123;msg+&quot; world&quot;&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg:&quot;hello&quot;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">     &lt;!-- 输出 hello world --&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在对用户呈现的界面中，用户所看到的内容往往会随着操作的数据不同而不同，这就要求界面呈现给用户的东西要动态变化，界面要随着用户的操作动态渲染，这就要求我们要有动态去改变界面的能力。在小程序中，通过WXML的数据绑定功能可以动态的渲染界面。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="微信小程序" scheme="https://zqinsheng.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="微信小程序" scheme="https://zqinsheng.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序-开发框架组成</title>
