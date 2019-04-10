@@ -169,6 +169,95 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-02_ssh免密登陆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/10/02_ssh免密登陆/">ssh免密登陆</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/10/02_ssh免密登陆/" class="archive-article-date">
+  	<time datetime="2018-01-09T16:05:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在启动和停止hadoop的时候，我们发现需要输入很多次密码，在伪分布式的环境中，就一个节点，一个 NameNode 和几个DataNode，输入几次密码还可以接受，但是如果有1000个节点，这样的操作要重复1000次，这是我们不能接受的。由此我们要使用一种叫做 SSH 的登陆方式来帮助我们免密登陆。  </p>
+<h2 id="一、什么是SSH"><a href="#一、什么是SSH" class="headerlink" title="一、什么是SSH"></a>一、什么是SSH</h2><p>SSH(Secure Shell)是一项创建在应用层和传输层基础上的安全协议，早期互联网通信都是明文通信，一旦被截获将暴露内容。1995年，芬兰研究员Tatu Ylonen设计了SSH协议，将登录信息全部加密，成为互联网安全的一个基本解决方案，迅速在全世界获得推广，目前已经成为Linux系统的标准配置。  </p>
+<p>如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。<br>简单的说，SSH就是一种网络协议，用于计算机之间的加密登录。<br>
+        
+          <a class="article-more-a" href="/2018/01/10/02_ssh免密登陆/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hadoop//" class="article-tag-list-link color2">hadoop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/10/02_ssh免密登陆/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-01_hadoop伪分布式的安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
