@@ -6,27 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>微信小程序-Hello World | JasonZhou&#39;s Blog</title>
+  <title>微信小程序-WXSS特性 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开发前的准备 前往微信公众平台注册AppId( https://mp.weixin.qq.com/)">
+  <meta name="description" content="在了解完小程序WXML模板之后，再来了解小程序视图层另外一门语言WXSS，WXSS（WeiXin Style Sheets）是一套用于小程序的样式语言，用于描述WXML的组件样式，也就是视觉上的效果。WXSS与Web开发中的CSS类似。为了更适合小程序开发，WXSS对CSS做了一些补充以及修改。WXSS（WeiXin Style Sheets）:是一套样式语言，用于描述WXML的组件样式。CSS（">
 <meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序-Hello World">
-<meta property="og:url" content="https://zqinsheng.github.io/2019/04/01/微信小程序01-hello world/index.html">
+<meta property="og:title" content="微信小程序-WXSS特性">
+<meta property="og:url" content="https://zqinsheng.github.io/2019/04/10/微信小程序06-WXSS特性/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
-<meta property="og:description" content="开发前的准备 前往微信公众平台注册AppId( https://mp.weixin.qq.com/)">
+<meta property="og:description" content="在了解完小程序WXML模板之后，再来了解小程序视图层另外一门语言WXSS，WXSS（WeiXin Style Sheets）是一套用于小程序的样式语言，用于描述WXML的组件样式，也就是视觉上的效果。WXSS与Web开发中的CSS类似。为了更适合小程序开发，WXSS对CSS做了一些补充以及修改。WXSS（WeiXin Style Sheets）:是一套样式语言，用于描述WXML的组件样式。CSS（">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1om3x96ioj30mg0gtq9w.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1om0o6lhcj30j10gddg9.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1omi5p9poj310s0hg0ti.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1omzgnlr6j30mn0fezl4.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1on99seg3j30us0j9dhq.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/007HSgDpgy1g1ondkeyodj30m50ckabg.jpg">
-<meta property="og:updated_time" content="2019-04-04T08:29:13.036Z">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yii4me63j305100y0of.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yix0ojbaj30e8082gmy.jpg">
+<meta property="og:updated_time" content="2019-04-11T03:20:35.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序-Hello World">
-<meta name="twitter:description" content="开发前的准备 前往微信公众平台注册AppId( https://mp.weixin.qq.com/)">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1om3x96ioj30mg0gtq9w.jpg">
+<meta name="twitter:title" content="微信小程序-WXSS特性">
+<meta name="twitter:description" content="在了解完小程序WXML模板之后，再来了解小程序视图层另外一门语言WXSS，WXSS（WeiXin Style Sheets）是一套用于小程序的样式语言，用于描述WXML的组件样式，也就是视觉上的效果。WXSS与Web开发中的CSS类似。为了更适合小程序开发，WXSS对CSS做了一些补充以及修改。WXSS（WeiXin Style Sheets）:是一套样式语言，用于描述WXML的组件样式。CSS（">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yii4me63j305100y0of.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -179,40 +175,76 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            <article id="post-微信小程序01-hello world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-微信小程序06-WXSS特性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序-Hello World
+      微信小程序-WXSS特性
     </h1>
   
 
         
-        <a href="/2019/04/01/微信小程序01-hello world/" class="archive-article-date">
-  	<time datetime="2019-04-01T12:15:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+        <a href="/2019/04/10/微信小程序06-WXSS特性/" class="archive-article-date">
+  	<time datetime="2019-04-10T14:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="开发前的准备"><a href="#开发前的准备" class="headerlink" title="开发前的准备"></a>开发前的准备</h2><ol>
-<li>前往微信公众平台注册AppId( <a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">https://mp.weixin.qq.com/</a>)  </li>
-</ol>
-<p><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1om3x96ioj30mg0gtq9w.jpg" alt=""><br><a id="more"></a></p>
-<p>填写邮箱等相关信息注册小程序<br><img src="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1om0o6lhcj30j10gddg9.jpg" alt="">  </p>
-<p>注册成功之后用微信关联登录，便可进入小程序的后台管理界面，在开发-开发设置-开发者ID中可以看到AppID(小程序ID),注册完成之后下载开发工具<br><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1omi5p9poj310s0hg0ti.jpg" alt=""></p>
-<ol>
-<li><p>开发工具下载（<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank" rel="noopener">点击这里下载</a>）  </p>
-</li>
-<li><p>新建项目<br>安装好微信Web开发工具，新建一个小程序的项目，填写项目名称选择路径之后填写AppID，这里不使用云服务进行开发<br><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1omzgnlr6j30mn0fezl4.jpg" alt="">  </p>
-</li>
-</ol>
-<p>新建完之后，小程序已经把基本的项目结构给我们搭建好了，我们可以可以找到项目路径下pages/index/index.wxml页面更改相应的代码，就可以在左边模拟器屏幕上显示hello world<br><img src="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1on99seg3j30us0j9dhq.jpg" alt="">  </p>
-<p>也可以通过真机调试的功能，编译出一个二维码，用手机微信扫码之后在真机上看界面详情<br><img src="http://wx2.sinaimg.cn/mw690/007HSgDpgy1g1ondkeyodj30m50ckabg.jpg" alt=""><br>至此，一个简单的hello world程序就写好了！</p>
+        <p>在了解完小程序WXML模板之后，再来了解小程序视图层另外一门语言WXSS，WXSS（WeiXin Style Sheets）是一套用于小程序的样式语言，用于描述WXML的组件样式，也就是视觉上的效果。WXSS与Web开发中的CSS类似。为了更适合小程序开发，WXSS对CSS做了一些补充以及修改。<br>WXSS（WeiXin Style Sheets）:是一套样式语言，用于描述WXML的组件样式。<br>CSS（Cascading Style Sheets）：是一套样式语言，是一种样式表语言，用来描述HTML或XML文档的呈现。<br>熟悉CSS开发的朋友，上手WXSS会很快，WXSS在CSS的基础上做了补充和修改，方便小程序开发。<br><a id="more"></a></p>
+<h3 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h3><p>在WXSS中，引入了rpx（responsive pixel）尺寸单位。也就是响应式像素，引用新尺寸单位的目的是，适配不同宽度的屏幕，开发起来更简单。<br>和常用的px像素单位相比，rpx像素在px上做了转换,小程序编译后，rpx会做一次px换算。换算是以375个物理像素为基准，也就是在一个宽度为375物理像素的屏幕下，1rpx = 1px。<br>例如：屏幕宽度为375px，共750个物理像素，那么1rpx = 375 / 750 px = 0.5px，px和rpx是1：2的对应关系。<br>在实际的开发中，根据屏幕的宽度来确定合适的rpx像素。  </p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p><strong>外联样式引用</strong><br>在小程序中可以通过<code>@import url(&#39;./test.css&#39;)</code>的方式来引入外部样式文件<br><strong>一个例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;text class=&apos;content&apos;&gt;hello world!&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.wxss</span><br><span class="line">@import &apos;assets.wxss&apos;</span><br><span class="line">.content&#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// pages/wxml/assets.wxss</span><br><span class="line">.content&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>界面显示效果：<br><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yii4me63j305100y0of.jpg" alt=""><br>hello world文字引用了两个样式文件中的效果！<br><strong>注意样式的执行顺序是从上到下，从左往右</strong>,顺序在后的样式会覆盖之前的样式。  </p>
+<p><strong>内联样式</strong><br>内联样式和web开发中的css一致，在标签内部写样式即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view style=&quot;color: red; font-size: 20rpx&quot;&gt;hello&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>WXSS选择器与CSS选择器类似,如下表所示:  </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>选择器</th>
+<th>样例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类选择器</td>
+<td>.class</td>
+<td>.content</td>
+<td>选择所有拥有 class=”content” 的组件</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>#id</td>
+<td>#head-content</td>
+<td>选择拥有 id=”head-content” 的组件</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>element</td>
+<td>view checkbox</td>
+<td>选择所有文档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td>伪元素选择器</td>
+<td>::after</td>
+<td>view::after</td>
+<td>在 view 组件后边插入内容</td>
+</tr>
+<tr>
+<td>伪元素选择器</td>
+<td>::before</td>
+<td>view::before</td>
+<td>在 view 组件前边插入内容  </td>
+</tr>
+</tbody>
+</table>
+<p><strong>选择器优先级</strong><br>WXSS优先级与CSS类似,权重越高越优先。在优先级相同的情况下，后设置的样式优先级高于先设置的样式，根据权重的优先级加载样式。  </p>
+<p><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yix0ojbaj30e8082gmy.jpg" alt=""></p>
 
       
 
@@ -319,7 +351,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2019/04/01/微信小程序01-hello world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2019/04/10/微信小程序06-WXSS特性/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -333,18 +365,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/04/02/微信小程序02-开发框架组成/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          微信小程序-开发框架组成
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/02/06_Hadoop RPC实现机制/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hadoop RPC实现机制</div>
+    <a href="/2019/04/09/微信小程序05-WXML特性之模板及引用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序-WXML特性之模板及引用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -371,7 +394,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发前的准备"><span class="toc-number">1.</span> <span class="toc-text">开发前的准备</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#尺寸单位"><span class="toc-number">1.</span> <span class="toc-text">尺寸单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样式"><span class="toc-number">2.</span> <span class="toc-text">样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择器"><span class="toc-number">3.</span> <span class="toc-text">选择器</span></a></li></ol>
                     </div>
                 </span>
             </div>
