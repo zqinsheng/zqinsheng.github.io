@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>Category: git | JasonZhou&#39;s Blog</title>
+  <title>微信小程序-WXML特性之条件渲染和列表渲染 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonZhou&#39;s Blog">
-<meta property="og:url" content="https://zqinsheng.github.io/categories/git/index.html">
+  <meta name="description" content="条件渲染界面上的数据可以通过条件判断的方式来动态显示语法为：wx:if使用 wx:elif：wx:elif=&amp;quot;&amp;quot; 和 wx:else: wx:else">
+<meta name="keywords" content="微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序-WXML特性之条件渲染和列表渲染">
+<meta property="og:url" content="https://zqinsheng.github.io/2019/04/09/微信小程序04-WXML特性之条件渲染和列表渲染/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="条件渲染界面上的数据可以通过条件判断的方式来动态显示语法为：wx:if使用 wx:elif：wx:elif=&amp;quot;&amp;quot; 和 wx:else: wx:else">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-10T09:00:56.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonZhou&#39;s Blog">
+<meta name="twitter:title" content="微信小程序-WXML特性之条件渲染和列表渲染">
+<meta name="twitter:description" content="条件渲染界面上的数据可以通过条件判断的方式来动态显示语法为：wx:if使用 wx:elif：wx:elif=&amp;quot;&amp;quot; 和 wx:else: wx:else">
   
   
     <link rel="icon" href="/favicon.png">
@@ -163,71 +168,237 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-微信小程序04-WXML特性之条件渲染和列表渲染" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/" class="archive-article-date">
-  	<time datetime="2018-04-02T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/">github设置ssh key后push还要输入用户名和密码解决方案</a>
+    <h1 class="article-title" itemprop="name">
+      微信小程序-WXML特性之条件渲染和列表渲染
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/04/09/微信小程序04-WXML特性之条件渲染和列表渲染/" class="archive-article-date">
+  	<time datetime="2019-04-09T13:55:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p>界面上的数据可以通过条件判断的方式来动态显示<br>语法为：<code>wx:if</code><br>使用 wx:elif：<code>wx:elif=&quot;&quot;</code> 和 wx:else: <code>wx:else</code><br><a id="more"></a><br><strong>一个简单的例子</strong><br>根据条件选择今天吃啥，条件是1吃米饭，条件是2吃面条，其他条件吃米线<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;text wx:if=&quot;&#123;&#123;condition==1&#125;&#125;&quot;&gt;</span><br><span class="line">    米饭</span><br><span class="line">  &lt;/text&gt;</span><br><span class="line">    &lt;text wx:elif=&quot;&#123;&#123;condition==2&#125;&#125;&quot;&gt;</span><br><span class="line">    面条</span><br><span class="line">  &lt;/text&gt;</span><br><span class="line">      &lt;text wx:else&gt;</span><br><span class="line">    米线</span><br><span class="line">  &lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// pages/wxml/index.js</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    //随机生成1，2，3的数字</span><br><span class="line">     condition:Math.floor(Math.random()*3+1)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>条件渲染和hidden的区别</strong><br>使用条件渲染和改变标签的hidden属性都可以控制元素的显示，而hidden属性始终都会渲染出元素块，只是控制显示与否。hidden在界面初始化的时候会有更高的初始化消耗。<br>wx:if在切换时框架会进行局部渲染，保证元素块在销毁时会进行重新渲染，在切换时消耗更高。<br>根据场景情况，在元素频繁切换显示时建议使用hidden进行条件渲染。  </p>
+<h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h3><p>在我们的界面当中，如果内容比较少，我们可以一条一条的显示内容，但是当内容是一个整体或是一堆数据的时候，我们显示和更改就很麻烦，这个时候就可以用到小程序wxml的另外一个特性-列表渲染。<br>在组件上使用 <code>wx:for={数组名}}</code> 控制属性绑定一个数组或列表，即可使用各项数据渲染界面，<strong>默认的下标变量名为index，默认的当前项变量名为item</strong><br><strong>一个简单的例子</strong><br>比如说渲染出一组学生的姓名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:for=&quot;&#123;names&#125;&#125;&quot;&gt;</span><br><span class="line">  &lt;!--默认下标索引名index，默认当前项名item--&gt;</span><br><span class="line">  &lt;text&gt;&#123;&#123;index&#125;&#125;&#123;item.name&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    names:[</span><br><span class="line">      &#123;name:&quot;张三&quot;&#125;,</span><br><span class="line">      &#123;name:&quot;李四&quot;&#125;,</span><br><span class="line">      &#123;name:&quot;王五&quot;&#125;,</span><br><span class="line">      &#123;name:&quot;赵六&quot;&#125;</span><br><span class="line">    ],</span><br><span class="line"> &#125;)</span><br><span class="line"></span><br><span class="line">      &lt;!--</span><br><span class="line">        在界面上显示：</span><br><span class="line">        0张三</span><br><span class="line">        1李四</span><br><span class="line">        2王五</span><br><span class="line">        3赵六</span><br><span class="line">      --&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用 wx:for-item 指定数组当前元素的变量名，使用 wx:for-index 指定数组当前下标的变量名：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;view wx:for=&quot;&#123;&#123;names&#125;&#125;&quot; wx:for-item=&quot;n&quot; wx:for-index=&quot;i&quot;&gt;</span><br><span class="line">  &lt;text&gt;&#123;&#123;i&#125;&#125;&#123;n.name&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text" >
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png" style="width:200px;height:200px;font-family:'微软雅黑';">
+                      <span class="reward-type">微信赞赏</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/微信小程序//" class="article-tag-list-link color1">微信小程序</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2019/04/09/微信小程序04-WXML特性之条件渲染和列表渲染/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/04/09/微信小程序05-WXML特性之模板及引用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          微信小程序-WXML特性之模板及引用
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/04/07/微信小程序03-WXML特性之数据绑定/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序-WXML特性之数据绑定</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#条件渲染"><span class="toc-number">1.</span> <span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表渲染"><span class="toc-number">2.</span> <span class="toc-text">列表渲染</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+ 
+
+  
+  
   
 
-    
+  
+
+  
+	
+   		
+	
+  
+
+
+
+
+
+<!-- 来必力City版安装代码 -->
+
+  <!-- 这一句是适配样式 -->
+  <section class="duoshuo" id="comments">
+    <!-- 以下是 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjg0Mi85NDAz">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+  </section>
+
 
 		    
           </div>
@@ -260,10 +431,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

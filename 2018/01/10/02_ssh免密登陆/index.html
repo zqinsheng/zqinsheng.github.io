@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>Category: git | JasonZhou&#39;s Blog</title>
+  <title>ssh免密登陆 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonZhou&#39;s Blog">
-<meta property="og:url" content="https://zqinsheng.github.io/categories/git/index.html">
+  <meta name="description" content="在启动和停止hadoop的时候，我们发现需要输入很多次密码，在伪分布式的环境中，就一个节点，一个 NameNode 和几个DataNode，输入几次密码还可以接受，但是如果有1000个节点，这样的操作要重复1000次，这是我们不能接受的。由此我们要使用一种叫做 SSH 的登陆方式来帮助我们免密登陆。   一、什么是SSHSSH(Secure Shell)是一项创建在应用层和传输层基础上的安全协议，">
+<meta name="keywords" content="hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ssh免密登陆">
+<meta property="og:url" content="https://zqinsheng.github.io/2018/01/10/02_ssh免密登陆/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="在启动和停止hadoop的时候，我们发现需要输入很多次密码，在伪分布式的环境中，就一个节点，一个 NameNode 和几个DataNode，输入几次密码还可以接受，但是如果有1000个节点，这样的操作要重复1000次，这是我们不能接受的。由此我们要使用一种叫做 SSH 的登陆方式来帮助我们免密登陆。   一、什么是SSHSSH(Secure Shell)是一项创建在应用层和传输层基础上的安全协议，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-14T18:56:23.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonZhou&#39;s Blog">
+<meta name="twitter:title" content="ssh免密登陆">
+<meta name="twitter:description" content="在启动和停止hadoop的时候，我们发现需要输入很多次密码，在伪分布式的环境中，就一个节点，一个 NameNode 和几个DataNode，输入几次密码还可以接受，但是如果有1000个节点，这样的操作要重复1000次，这是我们不能接受的。由此我们要使用一种叫做 SSH 的登陆方式来帮助我们免密登陆。   一、什么是SSHSSH(Secure Shell)是一项创建在应用层和传输层基础上的安全协议，">
   
   
     <link rel="icon" href="/favicon.png">
@@ -163,71 +168,252 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-02_ssh免密登陆" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/" class="archive-article-date">
-  	<time datetime="2018-04-02T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/">github设置ssh key后push还要输入用户名和密码解决方案</a>
+    <h1 class="article-title" itemprop="name">
+      ssh免密登陆
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/10/02_ssh免密登陆/" class="archive-article-date">
+  	<time datetime="2018-01-09T16:05:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在启动和停止hadoop的时候，我们发现需要输入很多次密码，在伪分布式的环境中，就一个节点，一个 NameNode 和几个DataNode，输入几次密码还可以接受，但是如果有1000个节点，这样的操作要重复1000次，这是我们不能接受的。由此我们要使用一种叫做 SSH 的登陆方式来帮助我们免密登陆。  </p>
+<h2 id="一、什么是SSH"><a href="#一、什么是SSH" class="headerlink" title="一、什么是SSH"></a>一、什么是SSH</h2><p>SSH(Secure Shell)是一项创建在应用层和传输层基础上的安全协议，早期互联网通信都是明文通信，一旦被截获将暴露内容。1995年，芬兰研究员Tatu Ylonen设计了SSH协议，将登录信息全部加密，成为互联网安全的一个基本解决方案，迅速在全世界获得推广，目前已经成为Linux系统的标准配置。  </p>
+<p>如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。<br>简单的说，SSH就是一种网络协议，用于计算机之间的加密登录。<br><a id="more"></a></p>
+<h2 id="二、hdoop中的SSH免密登陆"><a href="#二、hdoop中的SSH免密登陆" class="headerlink" title="二、hdoop中的SSH免密登陆"></a>二、hdoop中的SSH免密登陆</h2><h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>有A和B两台机器</p>
+<ol>
+<li>在A上创建一对密钥对，包括一个公钥和一个私钥 （公钥文件：~/.ssh/id_rsa.pub； 私钥文件：~/.ssh/id_rsa）。</li>
+<li>把A公钥放到B的（~/.ssh/authorized_keys）文件中, 自己保留好私钥.</li>
+<li>在使用ssh登录时,ssh程序会发送A私钥去和B上的A公钥做匹配.如果匹配成功就可以登录了。  </li>
+</ol>
+<p>假设我们有两台机器，A实现SSH免密登陆访问B<br><strong>A.hadoop@master(192.168.2.100)</strong><br><strong>B.hadoop@slave(192.168.2.128)</strong>  </p>
+<p>s<br><strong>第一步：生成密钥对</strong> <code>ssh-keygen -t rsa</code><br>在A机器上生成SSH密钥对，rsa 是加密算法，询问其密码直接回车默认为空，询问保存路径时直接回车采用默认路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master /]$ ssh-keygen -t rsa</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/home/hadoop/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /home/hadoop/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /home/hadoop/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">2b:42:8e:3d:ab:6e:98:e4:67:81:6c:5b:3d:86:ba:a8 hadoop@master</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">|                 |</span><br><span class="line">|. . +   S        |</span><br><span class="line">| = O +   .       |</span><br><span class="line">|+o= B o .        |</span><br><span class="line">|++.o + .         |</span><br><span class="line">|E+*..            |</span><br><span class="line">+-----------------+</span><br><span class="line">```  </span><br><span class="line">一路回车，此时生成的密钥对：id_rsa和id_rsa.pub，会默认存储在&quot;/home/hadoop/.ssh&quot;目录下。    </span><br><span class="line">```shell</span><br><span class="line">/home/hadoop/.ssh</span><br><span class="line">[hadoop@master .ssh]$ ll</span><br><span class="line">total 12</span><br><span class="line">-rw-------. 1 hadoop hadoop 1675 Jan 28 22:35 id_rsa</span><br><span class="line">-rw-r--r--. 1 hadoop hadoop  395 Jan 28 22:35 id_rsa.pub</span><br><span class="line">-rw-r--r--. 1 hadoop hadoop 1188 Jan 28 22:15 known_hosts</span><br><span class="line">[hadoop@master .ssh]$</span><br><span class="line">```  </span><br><span class="line">**第二步：将生成的A公钥远程拷贝到B机器  hadoop@slave(192.168.2.128)**  </span><br><span class="line">拷贝命令：``scp id_rsa.pub slave:/home/hadoop``  </span><br><span class="line"></span><br><span class="line">**第三步：将公钥添加到授权文件&quot;authorized_keys&quot;**  </span><br><span class="line">登陆到B机器，在B机器上将A公钥追加到授权文件中  </span><br><span class="line">``cat id_rsa.pub &gt;&gt; .ssh/authorized_keys``  </span><br><span class="line"></span><br><span class="line">**第四步：修改文件&quot;authorized_keys&quot;权限**  </span><br><span class="line">这一步很重要，否则SSH登陆时仍然需要密码  </span><br><span class="line">``chmod 700 ~/.ssh``  </span><br><span class="line">``chmod 600 authorized_keys``  </span><br><span class="line"></span><br><span class="line">**第五步：修改SSH配置文件**  </span><br><span class="line">``vi /etc/ssh/sshd_config``  </span><br><span class="line"></span><br><span class="line">找到如下三条信息，默认是被注释的，将注释去掉，这三条信息的含义分别是：  </span><br><span class="line">RSAAuthentication yes # 启用 RSA 认证  </span><br><span class="line">PubkeyAuthentication yes # 启用公钥私钥配对认证方式  </span><br><span class="line">AuthorizedKeysFile .ssh/authorized_keys # 公钥文件路径（和authorized_keys文件路径相同）  </span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile     .ssh/authorized_keys</span><br><span class="line">#AuthorizedKeysCommand none</span><br><span class="line">#AuthorizedKeysCommandRunAs nobody</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">**第六步：重启SSH服务**  </span><br><span class="line">```shell</span><br><span class="line">[root@slave .ssh]# service sshd restart</span><br><span class="line">Stopping sshd: [  OK  ]</span><br><span class="line">Starting sshd: [  OK  ]</span><br></pre></td></tr></table></figure></p>
+<p><strong>第七步：验证，在 A机器master上使用 SSH登录 B机器 slave</strong>  </p>
+<pre><code class="Shell">[hadoop@master /]$ ssh slave
+Last login: Sun Jan 28 08:33:08 2018 from 192.168.2.100
+[hadoop@slave ~]$
+</code></pre>
+<p>到此就OK了，或者第一次需要输入密码，以后再次登陆就不需要输入密码了。如果配置完后每次都要输入密码，大多是因为文件权限的问题，重新检查.ssh文件夹和authorized_keys的访问权限。  </p>
+<h2 id="三、伪分布式集群启动免密"><a href="#三、伪分布式集群启动免密" class="headerlink" title="三、伪分布式集群启动免密"></a>三、伪分布式集群启动免密</h2><p>回到一开始的问题，在启动hadoop集群的时候，我们需要输入很多次密码，用SSH的方式免密登陆，同样的道理，将自己的公钥添加到自己机器的授权文件中即可。<br><code>[hadoop@master .ssh]$ cat id_rsa.pub &gt;&gt; ./authorized_keys</code><br>修改权限：<br><code>[hadoop@master .ssh]$ chmod 600 authorized_keys</code>  </p>
+<p>启动和停止一下hadoop看看，是不是就不用输入密码了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text" >
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png" style="width:200px;height:200px;font-family:'微软雅黑';">
+                      <span class="reward-type">微信赞赏</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/hadoop//" class="article-tag-list-link color2">hadoop</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2018/01/10/02_ssh免密登陆/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/01/20/05_hdfs的java客户端编写/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HDFS的JAVA客户端编写
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/01/01/01_hadoop伪分布式的安装/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hadoop伪分布式的搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、什么是SSH"><span class="toc-number">1.</span> <span class="toc-text">一、什么是SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、hdoop中的SSH免密登陆"><span class="toc-number">2.</span> <span class="toc-text">二、hdoop中的SSH免密登陆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本原理"><span class="toc-number">2.1.</span> <span class="toc-text">基本原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、伪分布式集群启动免密"><span class="toc-number">3.</span> <span class="toc-text">三、伪分布式集群启动免密</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+ 
+
+  
+  
   
 
-    
+  
+
+  
+	
+   		
+	
+  
+
+
+
+
+
+<!-- 来必力City版安装代码 -->
+
+  <!-- 这一句是适配样式 -->
+  <section class="duoshuo" id="comments">
+    <!-- 以下是 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjg0Mi85NDAz">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+  </section>
+
 
 		    
           </div>
@@ -260,10 +446,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

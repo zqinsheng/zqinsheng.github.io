@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>Category: git | JasonZhou&#39;s Blog</title>
+  <title>Hadoop RPC实现机制 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonZhou&#39;s Blog">
-<meta property="og:url" content="https://zqinsheng.github.io/categories/git/index.html">
+  <meta name="description" content="一、RPC基础概念RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到">
+<meta name="keywords" content="hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop RPC实现机制">
+<meta property="og:url" content="https://zqinsheng.github.io/2018/02/02/06_Hadoop RPC实现机制/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="一、RPC基础概念RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/large/005TBZ5oly1fobqq0xd7bj308w05cweg.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/005TBZ5oly1fobst8xn04j31kw0qgqv5.jpg">
+<meta property="og:updated_time" content="2018-08-14T18:56:53.028Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonZhou&#39;s Blog">
+<meta name="twitter:title" content="Hadoop RPC实现机制">
+<meta name="twitter:description" content="一、RPC基础概念RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -163,71 +174,284 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-06_Hadoop RPC实现机制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/" class="archive-article-date">
-  	<time datetime="2018-04-02T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/">github设置ssh key后push还要输入用户名和密码解决方案</a>
+    <h1 class="article-title" itemprop="name">
+      Hadoop RPC实现机制
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/02/02/06_Hadoop RPC实现机制/" class="archive-article-date">
+  	<time datetime="2018-02-01T16:22:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、RPC基础概念"><a href="#一、RPC基础概念" class="headerlink" title="一、RPC基础概念"></a>一、RPC基础概念</h2><p>RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。<br>RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到达，服务器获得进程参数，根据参数作出答复，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。用简单的话说，就是一台计算机程序远程调用另外一台计算机的程序。<br>RPC对于我们来说是透明的，在调用的过程中感觉不到其间涉及跨机器间的通信，而是感觉像是在执行一个本地调用。我们不用去关心底层的网络通信细节，这是RPC中的访问透明性。  </p>
+<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt></p>
+<ol>
+<li>通信模块：客户端与服务的的请求应答消息，TCP/IP的socket机制</li>
+<li>stub程序：代理程序，为了保证RPC的透明性，它在客户端表现的就像调用本地程序一样，客户端发送请求参数之后，服务器端stub程序会解码对应结果、调用相应的服务过程返回结果给服务端。</li>
+<li>客户端/服务端过程：即请求的发出者与请求的处理者</li>
+<li>调度程序：调度程序接受来自通信模块的请求消息，并根据其中的标识选择一个Stub程序进行处理。</li>
+</ol>
+<a id="more"></a>
+<h2 id="二、Hadoop中RPC的Demo"><a href="#二、Hadoop中RPC的Demo" class="headerlink" title="二、Hadoop中RPC的Demo"></a>二、Hadoop中RPC的Demo</h2><p>hadoop 的 common 包中包含有 RPC 的包，有了这个 RPC 的包才能进行 RPC 操作，通过一个demo程序来感受一下RPC。<br>模拟用户登陆成功：从客户端调用远程服务端的登陆方法，登陆成功并返回登陆结果。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>客户端</th>
+<th>服务端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>环境</td>
+<td>win10/eclipse</td>
+<td>centerOS/eclipse</td>
+</tr>
+<tr>
+<td>网络配置</td>
+<td>暂时用不到</td>
+<td>主机名：master(192.168.2.100)</td>
+</tr>
+<tr>
+<td>项目详情</td>
+<td><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg" alt></td>
+<td><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fobqq0xd7bj308w05cweg.jpg" alt></td>
+</tr>
+</tbody>
+</table>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p><strong> 1.定义一个LoginService协议接口 </strong><br>RPC通信是通过 client 和 server 之间的接口通信，定义 server 对外服务的接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoginService</span> </span>&#123;</span><br><span class="line">  <span class="comment">//定义协议版本号，通过这个版本号来确认client和server之间的通信，不同版本号之间不能相互通信</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> versionID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(String username)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 2.定义LoginService的实现：LoginServiceImpl </strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginServiceImpl</span> <span class="keyword">implements</span> <span class="title">LoginService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> username+<span class="string">" is login !"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 3.构造并启动RPC server </strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Start</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> HadoopIllegalArgumentException, IOException </span>&#123;</span><br><span class="line">    <span class="comment">//创建RPC.Builder实例，设置一些必要的参数</span></span><br><span class="line">		Builder builder = <span class="keyword">new</span> RPC.Builder(<span class="keyword">new</span> Configuration());</span><br><span class="line">    <span class="comment">//设置主机名</span></span><br><span class="line">		builder.setBindAddress(<span class="string">"master"</span>);</span><br><span class="line">    <span class="comment">//设置端口号</span></span><br><span class="line">    builder.setPort(<span class="number">6666</span>);</span><br><span class="line">    <span class="comment">//协议接口</span></span><br><span class="line">    builder.setProtocol(LoginService.class);</span><br><span class="line">    <span class="comment">//业务逻辑实例</span></span><br><span class="line">    builder.setInstance(<span class="keyword">new</span> LoginServiceImpl());</span><br><span class="line">		<span class="comment">//构造RPC Server实例</span></span><br><span class="line">		Server server = builder.build();</span><br><span class="line">    <span class="comment">//启动服务，处于监听状态</span></span><br><span class="line">    server.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p><strong> 1.将服务端的 LoginService 协议接口拷贝到客户端中 </strong></p>
+<p><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg" alt></p>
+<p>注意客户端中的 LoginService 同样需要定义协议版本号并与服务端保持一致</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoginService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> versionID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(String username)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 2.调用服务端的login方法 </strong></p>
+<p>客户端代码的核心在于RPC.getProxy()，它可以返回一个代理对象，这个代码对象就是服务器端对象的代理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">      通过RPC拿到代理对象</span></span><br><span class="line"><span class="comment">      RPC.getProxy(协议接口, 版本号, 通信地址:主机名，端口号 , 配置信息);</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">		LoginService proxy = RPC.getProxy(LoginService.class, <span class="number">1L</span>, <span class="keyword">new</span> InetSocketAddress(<span class="string">"master"</span>, <span class="number">6666</span>), <span class="keyword">new</span> Configuration());</span><br><span class="line">    <span class="comment">//调用login方法,就像调用本地方法一样</span></span><br><span class="line">		String loginUser = proxy.login(<span class="string">"JasonZhou"</span>);</span><br><span class="line">		System.out.println(loginUser);</span><br><span class="line">    <span class="comment">//关闭连接</span></span><br><span class="line">    RPC.stopProxy(proxy);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行成功，在控制台看到输出信息，调用远程方法成功 ！<br><code>JasonZhou is login !</code></p>
+<p>整个过程如下图所示<br><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobst8xn04j31kw0qgqv5.jpg" alt></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text" >
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png" style="width:200px;height:200px;font-family:'微软雅黑';">
+                      <span class="reward-type">微信赞赏</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/hadoop//" class="article-tag-list-link color2">hadoop</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2018/02/02/06_Hadoop RPC实现机制/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          github设置ssh key后push还要输入用户名和密码解决方案
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/01/20/05_hdfs的java客户端编写/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDFS的JAVA客户端编写</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、RPC基础概念"><span class="toc-number">1.</span> <span class="toc-text">一、RPC基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Hadoop中RPC的Demo"><span class="toc-number">2.</span> <span class="toc-text">二、Hadoop中RPC的Demo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端"><span class="toc-number">2.1.</span> <span class="toc-text">服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端"><span class="toc-number">2.2.</span> <span class="toc-text">客户端</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+ 
+
+  
+  
   
 
-    
+  
+
+  
+	
+   		
+	
+  
+
+
+
+
+
+<!-- 来必力City版安装代码 -->
+
+  <!-- 这一句是适配样式 -->
+  <section class="duoshuo" id="comments">
+    <!-- 以下是 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjg0Mi85NDAz">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+  </section>
+
 
 		    
           </div>
@@ -260,10 +484,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

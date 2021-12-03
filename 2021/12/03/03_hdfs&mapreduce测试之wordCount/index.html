@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>Category: git | JasonZhou&#39;s Blog</title>
+  <title>JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="02 - hdfs&amp;amp;mapreduce测试之wordCount环境搭建完成，hadoop正常启动。按照国际惯例，通常我们在学习一门语言的时候，写的第一个程序就是Hello World。而在学习Hadoop时，我们要写的第一个Hello World级别的程序就是词频统计WordCount！ 一、测试HDFShadoop启动成功后，首先通过http://主机地址:50070到web界面，查看一">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JasonZhou&#39;s Blog">
-<meta property="og:url" content="https://zqinsheng.github.io/categories/git/index.html">
+<meta property="og:url" content="https://zqinsheng.github.io/2021/12/03/03_hdfs&mapreduce测试之wordCount/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="02 - hdfs&amp;amp;mapreduce测试之wordCount环境搭建完成，hadoop正常启动。按照国际惯例，通常我们在学习一门语言的时候，写的第一个程序就是Hello World。而在学习Hadoop时，我们要写的第一个Hello World级别的程序就是词频统计WordCount！ 一、测试HDFShadoop启动成功后，首先通过http://主机地址:50070到web界面，查看一">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx2.sinaimg.cn/large/005TBZ5oly1fnnk2dnae9j30mw0363ye.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/large/005TBZ5oly1fnnleok1cjj311u09adg3.jpg">
+<meta property="og:updated_time" content="2018-02-04T14:40:27.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JasonZhou&#39;s Blog">
+<meta name="twitter:description" content="02 - hdfs&amp;amp;mapreduce测试之wordCount环境搭建完成，hadoop正常启动。按照国际惯例，通常我们在学习一门语言的时候，写的第一个程序就是Hello World。而在学习Hadoop时，我们要写的第一个Hello World级别的程序就是词频统计WordCount！ 一、测试HDFShadoop启动成功后，首先通过http://主机地址:50070到web界面，查看一">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/large/005TBZ5oly1fnnk2dnae9j30mw0363ye.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -163,71 +170,214 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-03_hdfs&amp;mapreduce测试之wordCount" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="02-hdfs-amp-mapreduce测试之wordCount"><a href="#02-hdfs-amp-mapreduce测试之wordCount" class="headerlink" title="02 - hdfs&amp;mapreduce测试之wordCount"></a>02 - hdfs&amp;mapreduce测试之wordCount</h1><p>环境搭建完成，hadoop正常启动。按照国际惯例，通常我们在学习一门语言的时候，写的第一个程序就是Hello World。而在学习Hadoop时，我们要写的第一个Hello World级别的程序就是词频统计WordCount！</p>
+<h2 id="一、测试HDFS"><a href="#一、测试HDFS" class="headerlink" title="一、测试HDFS"></a>一、测试HDFS</h2><p>hadoop启动成功后，首先通过<code>http://主机地址:50070</code>到web界面，查看一下HDFS中的文件，找到菜单栏 Browse the file system<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fnnk2dnae9j30mw0363ye.jpg" alt>  </p>
+<p>进入之后，可以看到根目录 / 下面没任何文件，可以通过<code>hadoop fs -put &lt;linux上的文件&gt; &lt;hdfs上的路径&gt;</code>上传一个文件到hdfs文件系统中，这里先上传一个文件感受一下。  </p>
+<p>上传jdk到hdfs根目录下<code>hadoop fs -put jdk-7u65-linux-i586.tar.gz hdfs://master:9000/</code><br><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fnnleok1cjj311u09adg3.jpg" alt></p>
+<p>上传成功，可以看到文件的基本信息。hdfs可以上传文件，同样可以下载文件，web界面通过点击文件名下载到本地windows。<br>Linux通过<code>hadoop fs -get &lt;hdfs上的路径&gt; &lt;linux路径&gt;</code>  </p>
+<p>下载jdk到本地 /home/hadoop 目录下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master ~]$ pwd</span><br><span class="line">/home/hadoop</span><br><span class="line">[hadoop@master ~]$ ll</span><br><span class="line">total 8</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop 4096 Jan 20 01:49 tmp</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop 4096 Jan 21 01:48 tools</span><br><span class="line">[hadoop@master ~]$ hadoop fs -get hdfs://master:9000/jdk-7u65-linux-i586.tar.gz /home/hadoop/</span><br><span class="line">[hadoop@master ~]$ ll</span><br><span class="line">total 140232</span><br><span class="line">-rw-r--r--. 1 hadoop hadoop 143588167 Jan 21 01:51 jdk-7u65-linux-i586.tar.gz</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop      4096 Jan 20 01:49 tmp</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop      4096 Jan 21 01:48 tools</span><br></pre></td></tr></table></figure></p>
+<p>看到成功下载jdk到本地，表示hdfs正常工作，接下来测试一下mapreduce  </p>
+<h2 id="二、测试MapReduce"><a href="#二、测试MapReduce" class="headerlink" title="二、测试MapReduce"></a>二、测试MapReduce</h2><p>测试 MapReduce 要通过写一些程序测试，这里可以先通过 hadoop 自带的一些例子程序来测试。<br>这些例子程序在<code>hadoop安装目录/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.x.x.jar</code>中，这个jar包里面有一些例子程序，其中就包含统计词频的 <strong>WordCount</strong>  </p>
+<p>接下来就通过WordCount来实现一个小例子  </p>
+<ul>
+<li><p>新建一个文件testCount.txt，输入一些单词：  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master mapreduce]$ vi testCount.txt</span><br><span class="line">hello world</span><br><span class="line">hello hadoop</span><br><span class="line">hello hdfs</span><br><span class="line">hello mapreduce</span><br><span class="line">hello yarn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mapreduce是在集群上面运行，所以数据也要放到集群上面<br>将testCount.txt上传到hdfs中，为了方便，在根目录下新建一个文件夹 wordcount/input 来存放数据</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master mapreduce]$ hadoop fs -mkdir hdfs://master:9000/wordcount</span><br><span class="line">[hadoop@master mapreduce]$ hadoop fs -mkdir hdfs://master:9000/wordcount/input</span><br><span class="line">```   </span><br><span class="line">可以通过web界面查看文件夹&lt;/br&gt;</span><br><span class="line">![](http://wx2.sinaimg.cn/large/005TBZ5oly1fnnnxthe1yj30zn08tglt.jpg)&lt;/br&gt;  </span><br><span class="line"></span><br><span class="line">* 上传testCount.txt到input文件夹中:  </span><br><span class="line">``[hadoop@master mapreduce]$ hadoop fs -put testCount.txt /wordcount/input``  </span><br><span class="line"></span><br><span class="line">* 运行 hadoop-mapreduce-examples.jar中的wordcount程序，注意wordcount后面要跟两个参数，**/wordcount/input** 数据输入源，  **/wordcount/output** 数据输出文件夹，运行成功后数据输出的地方，可自定义位置  </span><br><span class="line">``hadoop jar hadoop-mapreduce-examples-2.4.1.jar wordcount /wordcount/input /wordcount/output``  </span><br><span class="line">```shell</span><br><span class="line">18/01/21 03:26:20 INFO mapreduce.Job:  map 0% reduce 0%</span><br><span class="line">18/01/21 03:26:27 INFO mapreduce.Job:  map 100% reduce 0%</span><br><span class="line">18/01/21 03:26:33 INFO mapreduce.Job:  map 100% reduce 100%</span><br><span class="line">18/01/21 03:26:34 INFO mapreduce.Job: Job job_1516452484789_0003 completed successfully</span><br><span class="line">18/01/21 03:26:34 INFO mapreduce.Job: Counters: 49</span><br><span class="line">```  </span><br><span class="line">运行成功后，查看输出文件夹，里面多了两个文件  </span><br><span class="line">```shell</span><br><span class="line">[hadoop@master mapreduce]$ hadoop fs -ls /wordcount/output</span><br><span class="line">Found 2 items</span><br><span class="line">-rw-r--r--   1 hadoop supergroup          0 2018-01-21 03:26 /wordcount/output/_SUCCESS</span><br><span class="line">-rw-r--r--   1 hadoop supergroup         51 2018-01-21 03:26 /wordcount/output/part-r-00000</span><br></pre></td></tr></table></figure>
+<p>查看输出的文件内容<br><code>hadoop fs -cat /wordcount/output/part-r-00000</code></p>
+<pre><code class="shell">/wordcount/output/part-r-00000
+hadoop  1
+hdfs    1
+hello   5
+mapreduce       1
+world   1
+yarn    1
+</code></pre>
+<p>成功统计出每个单词出现的次数！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text" >
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png" style="width:200px;height:200px;font-family:'微软雅黑';">
+                      <span class="reward-type">微信赞赏</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/" class="archive-article-date">
-  	<time datetime="2018-04-02T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/">github设置ssh key后push还要输入用户名和密码解决方案</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2021/12/03/03_hdfs&mapreduce测试之wordCount/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/04/10/微信小程序06-WXSS特性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序-WXSS特性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#02-hdfs-amp-mapreduce测试之wordCount"><span class="toc-number">1.</span> <span class="toc-text">02 - hdfs&amp;mapreduce测试之wordCount</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、测试HDFS"><span class="toc-number">1.1.</span> <span class="toc-text">一、测试HDFS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、测试MapReduce"><span class="toc-number">1.2.</span> <span class="toc-text">二、测试MapReduce</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+ 
+
+  
+  
   
 
-    
+  
+
+  
+	
+   		
+	
+  
+
+
+
+
+
+<!-- 来必力City版安装代码 -->
+
+  <!-- 这一句是适配样式 -->
+  <section class="duoshuo" id="comments">
+    <!-- 以下是 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjg0Mi85NDAz">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+  </section>
+
 
 		    
           </div>
@@ -260,10 +410,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

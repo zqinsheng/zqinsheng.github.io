@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>Category: git | JasonZhou&#39;s Blog</title>
+  <title>HDFS的JAVA客户端编写 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JasonZhou&#39;s Blog">
-<meta property="og:url" content="https://zqinsheng.github.io/categories/git/index.html">
+  <meta name="description" content="HDFS的JAVA客户端编写之前一直使用 HDFS Shell 命令来完成对 HDFS 的操作，当然也可以使用 Java 来对 HDFS 实现操作。接下来通过一些例子来看一下 JAVA 是如何对 HDFS 实现操作的。   在eclipse中新建一个java项目将Linux中hadoop安装目录下，配置好的core-site.xml hdfs-site.xml，mapred-site.xml，ya">
+<meta name="keywords" content="hadoop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDFS的JAVA客户端编写">
+<meta property="og:url" content="https://zqinsheng.github.io/2018/01/20/05_hdfs的java客户端编写/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
+<meta property="og:description" content="HDFS的JAVA客户端编写之前一直使用 HDFS Shell 命令来完成对 HDFS 的操作，当然也可以使用 Java 来对 HDFS 实现操作。接下来通过一些例子来看一下 JAVA 是如何对 HDFS 实现操作的。   在eclipse中新建一个java项目将Linux中hadoop安装目录下，配置好的core-site.xml hdfs-site.xml，mapred-site.xml，ya">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4ufraku9j309c05t0sq.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/large/005TBZ5oly1fo9isn3lvqj304m01b0s3.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/large/005TBZ5oly1fo4uamux7xj30r90fn75r.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8d68895jj30jj0e9t9k.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4swh96k2j30zq07xq3w.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/large/005TBZ5oly1fo5xyyhyvgj30zf0fnjt1.jpg">
+<meta property="og:updated_time" content="2019-04-08T06:52:12.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JasonZhou&#39;s Blog">
+<meta name="twitter:title" content="HDFS的JAVA客户端编写">
+<meta name="twitter:description" content="HDFS的JAVA客户端编写之前一直使用 HDFS Shell 命令来完成对 HDFS 的操作，当然也可以使用 Java 来对 HDFS 实现操作。接下来通过一些例子来看一下 JAVA 是如何对 HDFS 实现操作的。   在eclipse中新建一个java项目将Linux中hadoop安装目录下，配置好的core-site.xml hdfs-site.xml，mapred-site.xml，ya">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4ufraku9j309c05t0sq.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -163,71 +175,261 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-05_hdfs的java客户端编写" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/" class="archive-article-date">
-  	<time datetime="2018-04-02T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/02/解决方案-github设置ssh key后push还要输入用户名和密码解决方案/">github设置ssh key后push还要输入用户名和密码解决方案</a>
+    <h1 class="article-title" itemprop="name">
+      HDFS的JAVA客户端编写
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/20/05_hdfs的java客户端编写/" class="archive-article-date">
+  	<time datetime="2018-01-20T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HDFS的JAVA客户端编写"><a href="#HDFS的JAVA客户端编写" class="headerlink" title="HDFS的JAVA客户端编写"></a>HDFS的JAVA客户端编写</h1><p>之前一直使用 HDFS Shell 命令来完成对 HDFS 的操作，当然也可以使用 Java 来对 HDFS 实现操作。<br>接下来通过一些例子来看一下 JAVA 是如何对 HDFS 实现操作的。  </p>
+<h3 id="在eclipse中新建一个java项目"><a href="#在eclipse中新建一个java项目" class="headerlink" title="在eclipse中新建一个java项目"></a>在eclipse中新建一个java项目</h3><p>将Linux中hadoop安装目录下，配置好的<code>core-site.xml</code> <code>hdfs-site.xml</code>，mapred-site.xml，yarn-site.xml都拷贝到eclipse工作空间<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4ufraku9j309c05t0sq.jpg" alt><br><a id="more"></a><br>要对hdfs进行操作，需要两个核心jar包，这两个jar包可以在hadoop安装包中找到（hadoop-x.x.x\share\hadoop），导入这两个文件夹中对应的jar包以及他们的依赖包(在这两个目录下面的lib文件夹中)<br><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fo9isn3lvqj304m01b0s3.jpg" alt><br>将这两个jar包导入到项目中<br><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fo4uamux7xj30r90fn75r.jpg" alt></p>
+<p>或通过maven，添加相应版本的依赖</p>
+<p>pom.xml中加入这两个依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- hadoop hdfs类库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-hdfs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- hadoop 公共类库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-common<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.x.x<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="访问HDFS的两种方式"><a href="#访问HDFS的两种方式" class="headerlink" title="访问HDFS的两种方式"></a>访问HDFS的两种方式</h3><p>访问 HDFS 的核心类是<strong>FileSystem</strong>，<strong>FileSystem</strong> 是文件系统的抽象，HDFS是分布式文件系统对 <strong>FileSystem</strong> 的实现，<strong>FileSystem</strong> 有很多文件系统的实现，不论底层文件系统的具体实现是什么样的，文件系统 <strong>FileSystem</strong> 统一提供了访问接口，直接通过 <strong>FileSystem</strong> 来进行操作，如此即可解耦合。<br>如下是 <strong>FileSystem</strong> 的继承关系：  </p>
+<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8d68895jj30jj0e9t9k.jpg" alt></p>
+<p><strong>通过FileSystem访问HDFS</strong></p>
+<ol>
+<li><p>设置默认配置文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">方式1：</span></span><br><span class="line"><span class="comment">默认读取classpath下的xxx.site.xml配置文件，并解析其内容，封装到conf对象中。</span></span><br><span class="line"><span class="comment">设置默认文件系统、设置run Configuration的参数: -DHADOOP_USER_NAME=hadoop  </span></span><br><span class="line"><span class="comment">*/</span>   </span><br><span class="line">FileSystem fs = <span class="keyword">null</span>;</span><br><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();      </span><br><span class="line">fs = FileSystem.get(conf);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在构造函数中设置配置信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">方式2:在此方法的参数中设置默认文件系统、用户名</span></span><br><span class="line"><span class="comment">根据配置信息，去获取一个具体文件系统的客户端操作实例对象</span></span><br><span class="line"><span class="comment">会覆盖掉配置文件中读取的值</span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line">FileSystem fs = <span class="keyword">null</span>;</span><br><span class="line">Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">conf.set(<span class="string">"fs.defaultFS"</span>, <span class="string">"hdfs://master:9000/"</span>);</span><br><span class="line">fs = FileSystem.get(<span class="keyword">new</span> URI(<span class="string">"hdfs://master:9000/"</span>), conf, <span class="string">"hadoop"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="FileSystem操作实例"><a href="#FileSystem操作实例" class="headerlink" title="FileSystem操作实例"></a>FileSystem操作实例</h3><p>项目新建完成，先来测试从hdfs上下载文件，从hdfs中将 jdk-7u65-linux-i586.tar.gz 下载到本地<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zqinsheng.hdfs;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.io.IOUtils;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FSDataInputStream;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FileSystem;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HdfsUtil</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">//hdfs的配置信息,上述的两种配置方式,这里采用第一种</span></span><br><span class="line">		Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">		<span class="comment">//根据配置信息，去获取一个具体文件系统的客户端操作实例</span></span><br><span class="line">		FileSystem fs = FileSystem.get(conf);</span><br><span class="line">		<span class="comment">//hdfs文件存放的路径</span></span><br><span class="line">		Path path = <span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/jdk-7u65-linux-i586.tar.gz"</span>);</span><br><span class="line">		<span class="comment">//通过一个输入流获取将要下载的文件</span></span><br><span class="line">		FSDataInputStream is = fs.open(path);</span><br><span class="line">		<span class="comment">//通过一个输出流指定下载到哪</span></span><br><span class="line">		FileOutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"h:\\download.jar"</span>);</span><br><span class="line">		<span class="comment">//commons包中提供的工具类,将一个输入流拷贝到输出流中</span></span><br><span class="line">		IOUtils.copy(is, out);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也许会出现这样的错误，原因是java不认识hdfs://这样的路径，本地文件系统不知道这是什么路径，一般都是<strong>配置文件</strong>的问题，请检查是否将 <code>core-site.xml、hdfs-site.xml</code>文件拷贝到src目录下，或是检查配置参数。<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4swh96k2j30zq07xq3w.jpg" alt>   </p>
+<p>或者是这样的错误，权限被拒绝，原因还是在windows中我们的用户不是hdfs所指定的用户，如果在Linux中使用eclipse则不会出现这样的情况。</p>
+<p><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fo5xyyhyvgj30zf0fnjt1.jpg" alt></p>
+<p>解决办法：</p>
+<ul>
+<li><p>可以在run as-&gt;run<br>configuration-&gt;arguments里面添加-DHADOOP_USER_NAME=用户名  </p>
+</li>
+<li><p>或者是通过FileSystem.get()进行user的指定，fs = FileSystem.get(new URI(“hdfs://master:9000/“), conf, “hadoop”);</p>
+</li>
+</ul>
+<p>上面的下载文件是一种相对底层的写法，<strong>FileSystem</strong> 已经帮我们将这些操作封装好了，我们直接调用这些方法即可完成相对应的操作。通过一个<strong>Unit</strong>测试代码来看一下封装好的方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zqinsheng.hdfs;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.net.URI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FileStatus;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.FileSystem;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.LocatedFileStatus;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.Path;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.RemoteIterator;</span><br><span class="line"><span class="keyword">import</span> org.junit.Before;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestHdfs</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	FileSystem fs = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 每次执行方法前都获取FileSystem实例对象</span></span><br><span class="line">	<span class="meta">@Before</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> IOException, Exception, Exception </span>&#123;</span><br><span class="line">		Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">		fs = FileSystem.get(<span class="keyword">new</span> URI(<span class="string">"hdfs://master:9000"</span>), conf, <span class="string">"hadoop"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 上传文件</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">upload</span><span class="params">()</span> <span class="keyword">throws</span> Exception, IOException </span>&#123;</span><br><span class="line">		fs.copyFromLocalFile(<span class="keyword">new</span> Path(<span class="string">"f://HelloWorld.txt"</span>), <span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/testHdfs"</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 下载文件</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * 如果报空指针异常</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * 解决方法:将fs.copyToLocalFile(hdfsPath,localPath);</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * 改为fs.copyToLocalFile(false,hdfsPath,localPath,true);</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">download</span><span class="params">()</span> <span class="keyword">throws</span> Exception, IOException </span>&#123;</span><br><span class="line">		fs.copyToLocalFile(<span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/testHdfs/HelloWorld.txt"</span>), <span class="keyword">new</span> Path(<span class="string">"h:/HelloWorld.txt"</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 创建文件夹</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mkdir</span><span class="params">()</span> <span class="keyword">throws</span> IllegalArgumentException, IOException </span>&#123;</span><br><span class="line">		fs.mkdirs(<span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/aa/bb/cc"</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 删除文件或文件夹</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">()</span> <span class="keyword">throws</span> IllegalArgumentException, IOException </span>&#123;</span><br><span class="line">		fs.delete(<span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/aa"</span>),<span class="keyword">true</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 查询指定目录下的文件，不包括文件夹，包括子文件夹下的文件</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> FileNotFoundException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listFile</span><span class="params">()</span> <span class="keyword">throws</span> FileNotFoundException, IllegalArgumentException, IOException </span>&#123;</span><br><span class="line">		<span class="comment">//获取到文件状态的迭代器,true表示递归遍历</span></span><br><span class="line">		RemoteIterator&lt;LocatedFileStatus&gt; files = fs.listFiles(<span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/"</span>),<span class="keyword">true</span>);</span><br><span class="line">		<span class="comment">//遍历迭代器</span></span><br><span class="line">		<span class="keyword">while</span>(files.hasNext()) &#123;</span><br><span class="line">			<span class="comment">//得到每个文件状态</span></span><br><span class="line">			LocatedFileStatus file = files.next();</span><br><span class="line">			<span class="comment">//拿到LocatedFileStatus对象后，可以通过这个对象获取文件的名称、路径、块大小、权限、所属者等等信息</span></span><br><span class="line">			String name = file.getPath().getName();</span><br><span class="line">			System.out.println(name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 查询指定目录下的文件和文件夹</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> FileNotFoundException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listFileAndDir</span><span class="params">()</span> <span class="keyword">throws</span> FileNotFoundException, IllegalArgumentException, Exception </span>&#123;</span><br><span class="line">		<span class="comment">//列出文件或文件夹信息，不提供递归遍历</span></span><br><span class="line">		<span class="comment">//得到文件的状态</span></span><br><span class="line">		FileStatus[] listStatus = fs.listStatus(<span class="keyword">new</span> Path(<span class="string">"hdfs://master:9000/"</span>));</span><br><span class="line">		<span class="keyword">for</span>(FileStatus fileStatus:listStatus) &#123;</span><br><span class="line">			<span class="comment">//获取文件名称</span></span><br><span class="line">			String name = fileStatus.getPath().getName();</span><br><span class="line">			System.out.println(name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text" >
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png" style="width:200px;height:200px;font-family:'微软雅黑';">
+                      <span class="reward-type">微信赞赏</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/hadoop//" class="article-tag-list-link color2">hadoop</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2018/01/20/05_hdfs的java客户端编写/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/02/02/06_Hadoop RPC实现机制/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hadoop RPC实现机制
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/01/10/02_ssh免密登陆/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ssh免密登陆</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDFS的JAVA客户端编写"><span class="toc-number">1.</span> <span class="toc-text">HDFS的JAVA客户端编写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在eclipse中新建一个java项目"><span class="toc-number">1.0.1.</span> <span class="toc-text">在eclipse中新建一个java项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问HDFS的两种方式"><span class="toc-number">1.0.2.</span> <span class="toc-text">访问HDFS的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileSystem操作实例"><span class="toc-number">1.0.3.</span> <span class="toc-text">FileSystem操作实例</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+ 
+
+  
+  
   
 
-    
+  
+
+  
+	
+   		
+	
+  
+
+
+
+
+
+<!-- 来必力City版安装代码 -->
+
+  <!-- 这一句是适配样式 -->
+  <section class="duoshuo" id="comments">
+    <!-- 以下是 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjg0Mi85NDAz">
+      <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+      </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+  </section>
+
 
 		    
           </div>
@@ -260,10 +462,10 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
