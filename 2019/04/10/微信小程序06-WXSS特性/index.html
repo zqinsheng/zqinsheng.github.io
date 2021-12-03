@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
   <title>微信小程序-WXSS特性 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yii4me63j305100y0of.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yix0ojbaj30e8082gmy.jpg">
-<meta property="og:updated_time" content="2019-04-11T03:20:35.458Z">
+<meta property="og:updated_time" content="2021-11-23T09:44:04.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序-WXSS特性">
 <meta name="twitter:description" content="在了解完小程序WXML模板之后，再来了解小程序视图层另外一门语言WXSS，WXSS（WeiXin Style Sheets）是一套用于小程序的样式语言，用于描述WXML的组件样式，也就是视觉上的效果。WXSS与Web开发中的CSS类似。为了更适合小程序开发，WXSS对CSS做了一些补充以及修改。WXSS（WeiXin Style Sheets）:是一套样式语言，用于描述WXML的组件样式。CSS（">
@@ -48,9 +48,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ" />
+<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ">
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -85,10 +85,6 @@ var _hmt = _hmt || [];
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -198,7 +194,7 @@ var _hmt = _hmt || [];
         <p>在了解完小程序WXML模板之后，再来了解小程序视图层另外一门语言WXSS，WXSS（WeiXin Style Sheets）是一套用于小程序的样式语言，用于描述WXML的组件样式，也就是视觉上的效果。WXSS与Web开发中的CSS类似。为了更适合小程序开发，WXSS对CSS做了一些补充以及修改。<br>WXSS（WeiXin Style Sheets）:是一套样式语言，用于描述WXML的组件样式。<br>CSS（Cascading Style Sheets）：是一套样式语言，是一种样式表语言，用来描述HTML或XML文档的呈现。<br>熟悉CSS开发的朋友，上手WXSS会很快，WXSS在CSS的基础上做了补充和修改，方便小程序开发。<br><a id="more"></a></p>
 <h3 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h3><p>在WXSS中，引入了rpx（responsive pixel）尺寸单位。也就是响应式像素，引用新尺寸单位的目的是，适配不同宽度的屏幕，开发起来更简单。<br>和常用的px像素单位相比，rpx像素在px上做了转换,小程序编译后，rpx会做一次px换算。换算是以375个物理像素为基准，也就是在一个宽度为375物理像素的屏幕下，1rpx = 1px。<br>例如：屏幕宽度为375px，共750个物理像素，那么1rpx = 375 / 750 px = 0.5px，px和rpx是1：2的对应关系。<br>在实际的开发中，根据屏幕的宽度来确定合适的rpx像素。  </p>
 <h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p><strong>外联样式引用</strong><br>在小程序中可以通过<code>@import url(&#39;./test.css&#39;)</code>的方式来引入外部样式文件<br><strong>一个例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">  &lt;text class=&apos;content&apos;&gt;hello world!&lt;/text&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">// pages/wxml/index.wxss</span><br><span class="line">@import &apos;assets.wxss&apos;</span><br><span class="line">.content&#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// pages/wxml/assets.wxss</span><br><span class="line">.content&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>界面显示效果：<br><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yii4me63j305100y0of.jpg" alt=""><br>hello world文字引用了两个样式文件中的效果！<br><strong>注意样式的执行顺序是从上到下，从左往右</strong>,顺序在后的样式会覆盖之前的样式。  </p>
+<p>界面显示效果：<br><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yii4me63j305100y0of.jpg" alt><br>hello world文字引用了两个样式文件中的效果！<br><strong>注意样式的执行顺序是从上到下，从左往右</strong>,顺序在后的样式会覆盖之前的样式。  </p>
 <p><strong>内联样式</strong><br>内联样式和web开发中的css一致，在标签内部写样式即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;view style=&quot;color: red; font-size: 20rpx&quot;&gt;hello&lt;/view&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>WXSS选择器与CSS选择器类似,如下表所示:  </p>
 <table>
@@ -244,7 +240,7 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 <p><strong>选择器优先级</strong><br>WXSS优先级与CSS类似,权重越高越优先。在优先级相同的情况下，后设置的样式优先级高于先设置的样式，根据权重的优先级加载样式。  </p>
-<p><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yix0ojbaj30e8082gmy.jpg" alt=""></p>
+<p><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1yix0ojbaj30e8082gmy.jpg" alt></p>
 
       
 
@@ -457,7 +453,7 @@ var _hmt = _hmt || [];
     		
     
       	<div class="footer-right">
-      		&copy; 2019 JasonZhou.
+      		&copy; 2021 JasonZhou.
 		<span id="busuanzi_container_site_pv">
                 Total views:<span id="busuanzi_value_site_pv"></span>
 </span>
@@ -510,25 +506,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -603,22 +591,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/cfb475d89218" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-简书</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://ke.qq.com/teacher/64831031" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-腾讯云课堂</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
   <title>hdfs&amp;mapreduce测试之wordCount | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -48,9 +48,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ" />
+<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ">
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -85,10 +85,6 @@ var _hmt = _hmt || [];
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -196,8 +192,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>环境搭建完成，hadoop正常启动。按照国际惯例，通常我们在学习一门语言的时候，写的第一个程序就是Hello World。而在学习Hadoop时，我们要写的第一个Hello World级别的程序就是词频统计WordCount！</p>
-<h2 id="一、测试HDFS"><a href="#一、测试HDFS" class="headerlink" title="一、测试HDFS"></a>一、测试HDFS</h2><p>hadoop启动成功后，首先通过<code>http://主机地址:50070</code>到web界面，查看一下HDFS中的文件，找到菜单栏 Browse the file system<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fnnk2dnae9j30mw0363ye.jpg" alt=""><br><a id="more"></a><br>进入之后，可以看到根目录 / 下面没任何文件，可以通过<code>hadoop fs -put &lt;linux上的文件&gt; &lt;hdfs上的路径&gt;</code>上传一个文件到hdfs文件系统中，这里先上传一个文件感受一下。  </p>
-<p>上传jdk到hdfs根目录下<code>hadoop fs -put jdk-7u65-linux-i586.tar.gz hdfs://master:9000/</code><br><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fnnleok1cjj311u09adg3.jpg" alt=""></p>
+<h2 id="一、测试HDFS"><a href="#一、测试HDFS" class="headerlink" title="一、测试HDFS"></a>一、测试HDFS</h2><p>hadoop启动成功后，首先通过<code>http://主机地址:50070</code>到web界面，查看一下HDFS中的文件，找到菜单栏 Browse the file system<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fnnk2dnae9j30mw0363ye.jpg" alt><br><a id="more"></a><br>进入之后，可以看到根目录 / 下面没任何文件，可以通过<code>hadoop fs -put &lt;linux上的文件&gt; &lt;hdfs上的路径&gt;</code>上传一个文件到hdfs文件系统中，这里先上传一个文件感受一下。  </p>
+<p>上传jdk到hdfs根目录下<code>hadoop fs -put jdk-7u65-linux-i586.tar.gz hdfs://master:9000/</code><br><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fnnleok1cjj311u09adg3.jpg" alt></p>
 <p>上传成功，可以看到文件的基本信息。hdfs可以上传文件，同样可以下载文件，web界面通过点击文件名下载到本地windows。<br>Linux通过<code>hadoop fs -get &lt;hdfs上的路径&gt; &lt;linux路径&gt;</code>  </p>
 <p>下载jdk到本地 /home/hadoop 目录下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master ~]$ pwd</span><br><span class="line">/home/hadoop</span><br><span class="line">[hadoop@master ~]$ ll</span><br><span class="line">total 8</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop 4096 Jan 20 01:49 tmp</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop 4096 Jan 21 01:48 tools</span><br><span class="line">[hadoop@master ~]$ hadoop fs -get hdfs://master:9000/jdk-7u65-linux-i586.tar.gz /home/hadoop/</span><br><span class="line">[hadoop@master ~]$ ll</span><br><span class="line">total 140232</span><br><span class="line">-rw-r--r--. 1 hadoop hadoop 143588167 Jan 21 01:51 jdk-7u65-linux-i586.tar.gz</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop      4096 Jan 20 01:49 tmp</span><br><span class="line">drwxrwxr-x. 4 hadoop hadoop      4096 Jan 21 01:48 tools</span><br></pre></td></tr></table></figure></p>
 <p>看到成功下载jdk到本地，表示hdfs正常工作，接下来测试一下mapreduce  </p>
@@ -442,7 +438,7 @@ yarn    1
     		
     
       	<div class="footer-right">
-      		&copy; 2019 JasonZhou.
+      		&copy; 2021 JasonZhou.
 		<span id="busuanzi_container_site_pv">
                 Total views:<span id="busuanzi_value_site_pv"></span>
 </span>
@@ -495,25 +491,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -588,22 +576,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/cfb475d89218" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-简书</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://ke.qq.com/teacher/64831031" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-腾讯云课堂</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

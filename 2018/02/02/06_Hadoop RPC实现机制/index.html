@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
   <title>Hadoop RPC实现机制 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -51,9 +51,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ" />
+<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ">
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -88,10 +88,6 @@ var _hmt = _hmt || [];
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -199,7 +195,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、RPC基础概念"><a href="#一、RPC基础概念" class="headerlink" title="一、RPC基础概念"></a>一、RPC基础概念</h2><p>RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。<br>RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到达，服务器获得进程参数，根据参数作出答复，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。用简单的话说，就是一台计算机程序远程调用另外一台计算机的程序。<br>RPC对于我们来说是透明的，在调用的过程中感觉不到其间涉及跨机器间的通信，而是感觉像是在执行一个本地调用。我们不用去关心底层的网络通信细节，这是RPC中的访问透明性。  </p>
-<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt=""></p>
+<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt></p>
 <ol>
 <li>通信模块：客户端与服务的的请求应答消息，TCP/IP的socket机制</li>
 <li>stub程序：代理程序，为了保证RPC的透明性，它在客户端表现的就像调用本地程序一样，客户端发送请求参数之后，服务器端stub程序会解码对应结果、调用相应的服务过程返回结果给服务端。</li>
@@ -229,8 +225,8 @@ var _hmt = _hmt || [];
 </tr>
 <tr>
 <td>项目详情</td>
-<td><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg" alt=""></td>
-<td><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fobqq0xd7bj308w05cweg.jpg" alt=""></td>
+<td><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg" alt></td>
+<td><img src="http://wx4.sinaimg.cn/large/005TBZ5oly1fobqq0xd7bj308w05cweg.jpg" alt></td>
 </tr>
 </tbody>
 </table>
@@ -241,14 +237,14 @@ var _hmt = _hmt || [];
 <p><strong> 3.构造并启动RPC server </strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Start</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> HadoopIllegalArgumentException, IOException </span>&#123;</span><br><span class="line">    <span class="comment">//创建RPC.Builder实例，设置一些必要的参数</span></span><br><span class="line">		Builder builder = <span class="keyword">new</span> RPC.Builder(<span class="keyword">new</span> Configuration());</span><br><span class="line">    <span class="comment">//设置主机名</span></span><br><span class="line">		builder.setBindAddress(<span class="string">"master"</span>);</span><br><span class="line">    <span class="comment">//设置端口号</span></span><br><span class="line">    builder.setPort(<span class="number">6666</span>);</span><br><span class="line">    <span class="comment">//协议接口</span></span><br><span class="line">    builder.setProtocol(LoginService.class);</span><br><span class="line">    <span class="comment">//业务逻辑实例</span></span><br><span class="line">    builder.setInstance(<span class="keyword">new</span> LoginServiceImpl());</span><br><span class="line">		<span class="comment">//构造RPC Server实例</span></span><br><span class="line">		Server server = builder.build();</span><br><span class="line">    <span class="comment">//启动服务，处于监听状态</span></span><br><span class="line">    server.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p><strong> 1.将服务端的 LoginService 协议接口拷贝到客户端中 </strong></p>
-<p><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg" alt=""></p>
+<p><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobqv7gk48j306r043a9y.jpg" alt></p>
 <p>注意客户端中的 LoginService 同样需要定义协议版本号并与服务端保持一致</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LoginService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> versionID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(String username)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong> 2.调用服务端的login方法 </strong></p>
 <p>客户端代码的核心在于RPC.getProxy()，它可以返回一个代理对象，这个代码对象就是服务器端对象的代理</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginController</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">      通过RPC拿到代理对象</span></span><br><span class="line"><span class="comment">      RPC.getProxy(协议接口, 版本号, 通信地址:主机名，端口号 , 配置信息);</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">		LoginService proxy = RPC.getProxy(LoginService.class, <span class="number">1L</span>, <span class="keyword">new</span> InetSocketAddress(<span class="string">"master"</span>, <span class="number">6666</span>), <span class="keyword">new</span> Configuration());</span><br><span class="line">    <span class="comment">//调用login方法,就像调用本地方法一样</span></span><br><span class="line">		String loginUser = proxy.login(<span class="string">"JasonZhou"</span>);</span><br><span class="line">		System.out.println(loginUser);</span><br><span class="line">    <span class="comment">//关闭连接</span></span><br><span class="line">    RPC.stopProxy(proxy);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行成功，在控制台看到输出信息，调用远程方法成功 ！<br><code>JasonZhou is login !</code></p>
-<p>整个过程如下图所示<br><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobst8xn04j31kw0qgqv5.jpg" alt=""></p>
+<p>整个过程如下图所示<br><img src="http://wx1.sinaimg.cn/large/005TBZ5oly1fobst8xn04j31kw0qgqv5.jpg" alt></p>
 
       
 
@@ -470,7 +466,7 @@ var _hmt = _hmt || [];
     		
     
       	<div class="footer-right">
-      		&copy; 2019 JasonZhou.
+      		&copy; 2021 JasonZhou.
 		<span id="busuanzi_container_site_pv">
                 Total views:<span id="busuanzi_value_site_pv"></span>
 </span>
@@ -523,25 +519,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -616,22 +604,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/cfb475d89218" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-简书</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://ke.qq.com/teacher/64831031" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-腾讯云课堂</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

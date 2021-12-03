@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
   <title>JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,9 +40,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ" />
+<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ">
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -77,10 +77,6 @@ var _hmt = _hmt || [];
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -537,7 +533,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="小程序代码组成"><a href="#小程序代码组成" class="headerlink" title="小程序代码组成"></a>小程序代码组成</h2><p>在我们新建好一个小程序项目后，开发工具帮我们把基本的结构目录搭建好了，我们不难发现，在每一个文件夹下面都有四个文件，每一个页面都对应着四个文件<br><img src="http://wx1.sinaimg.cn/mw690/007HSgDpgy1g1oo9naxkyj308307ia9y.jpg" alt="">  </p>
+        <h2 id="小程序代码组成"><a href="#小程序代码组成" class="headerlink" title="小程序代码组成"></a>小程序代码组成</h2><p>在我们新建好一个小程序项目后，开发工具帮我们把基本的结构目录搭建好了，我们不难发现，在每一个文件夹下面都有四个文件，每一个页面都对应着四个文件<br><img src="http://wx1.sinaimg.cn/mw690/007HSgDpgy1g1oo9naxkyj308307ia9y.jpg" alt>  </p>
 <p>这些文件就是小程序的组成元素,小程序由 配置代码JSON文件、模板代码 WXML 文件、样式代码 WXSS文件以及逻辑代码 JavaScript文件组成。每一个文件都发挥着各自的作用，下面来详细介绍每一个文件所扮演的角色。  </p>
 <h2 id="一、WXML-模板"><a href="#一、WXML-模板" class="headerlink" title="一、WXML 模板"></a>一、WXML 模板</h2><p>WXML 全称是 WeiXin Markup Language，是小程序框架设计的一套标签语言，结合小程序的各种组件渲染出页面的结构。<strong>语法和HTML类似</strong>，有过HTML开发经验应该可以很快上手，它也是通过标签来渲染视图的，基本语法如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在此处写注释 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;标签名 属性名1=&quot;属性值1&quot; 属性名2=&quot;属性值2&quot; ...&gt; ...&lt;/标签名&gt;</span><br></pre></td></tr></table></figure></p>
 <ul>
@@ -680,7 +676,7 @@ var _hmt = _hmt || [];
         <h2 id="开发前的准备"><a href="#开发前的准备" class="headerlink" title="开发前的准备"></a>开发前的准备</h2><ol>
 <li>前往微信公众平台注册AppId( <a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">https://mp.weixin.qq.com/</a>)  </li>
 </ol>
-<p><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1om3x96ioj30mg0gtq9w.jpg" alt=""><br>
+<p><img src="http://wx4.sinaimg.cn/mw690/007HSgDpgy1g1om3x96ioj30mg0gtq9w.jpg" alt><br>
         
           <a class="article-more-a" href="/2019/04/01/微信小程序01-hello world/#more">more >></a>
         
@@ -768,7 +764,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="一、RPC基础概念"><a href="#一、RPC基础概念" class="headerlink" title="一、RPC基础概念"></a>一、RPC基础概念</h2><p>RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。<br>RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到达，服务器获得进程参数，根据参数作出答复，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。用简单的话说，就是一台计算机程序远程调用另外一台计算机的程序。<br>RPC对于我们来说是透明的，在调用的过程中感觉不到其间涉及跨机器间的通信，而是感觉像是在执行一个本地调用。我们不用去关心底层的网络通信细节，这是RPC中的访问透明性。  </p>
-<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt=""></p>
+<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt></p>
 <ol>
 <li>通信模块：客户端与服务的的请求应答消息，TCP/IP的socket机制</li>
 <li>stub程序：代理程序，为了保证RPC的透明性，它在客户端表现的就像调用本地程序一样，客户端发送请求参数之后，服务器端stub程序会解码对应结果、调用相应的服务过程返回结果给服务端。</li>
@@ -862,7 +858,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="HDFS的JAVA客户端编写"><a href="#HDFS的JAVA客户端编写" class="headerlink" title="HDFS的JAVA客户端编写"></a>HDFS的JAVA客户端编写</h1><p>之前一直使用 HDFS Shell 命令来完成对 HDFS 的操作，当然也可以使用 Java 来对 HDFS 实现操作。<br>接下来通过一些例子来看一下 JAVA 是如何对 HDFS 实现操作的。  </p>
-<h3 id="在eclipse中新建一个java项目"><a href="#在eclipse中新建一个java项目" class="headerlink" title="在eclipse中新建一个java项目"></a>在eclipse中新建一个java项目</h3><p>将Linux中hadoop安装目录下，配置好的<code>core-site.xml</code> <code>hdfs-site.xml</code>，mapred-site.xml，yarn-site.xml都拷贝到eclipse工作空间<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4ufraku9j309c05t0sq.jpg" alt=""><br>
+<h3 id="在eclipse中新建一个java项目"><a href="#在eclipse中新建一个java项目" class="headerlink" title="在eclipse中新建一个java项目"></a>在eclipse中新建一个java项目</h3><p>将Linux中hadoop安装目录下，配置好的<code>core-site.xml</code> <code>hdfs-site.xml</code>，mapred-site.xml，yarn-site.xml都拷贝到eclipse工作空间<br><img src="http://wx2.sinaimg.cn/large/005TBZ5oly1fo4ufraku9j309c05t0sq.jpg" alt><br>
         
           <a class="article-more-a" href="/2018/01/20/05_hdfs的java客户端编写/#more">more >></a>
         
@@ -948,7 +944,7 @@ var _hmt = _hmt || [];
     		
     
       	<div class="footer-right">
-      		&copy; 2019 JasonZhou.
+      		&copy; 2021 JasonZhou.
 		<span id="busuanzi_container_site_pv">
                 Total views:<span id="busuanzi_value_site_pv"></span>
 </span>
@@ -1001,25 +997,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -1094,22 +1082,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/cfb475d89218" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-简书</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://ke.qq.com/teacher/64831031" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-腾讯云课堂</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

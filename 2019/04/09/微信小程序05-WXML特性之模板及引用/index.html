@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
   <title>微信小程序-WXML特性之模板及引用 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -47,9 +47,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ" />
+<meta name="google-site-verification" content="BksQX83ftBZRty1JeXuwuGYiYgy6rdn36KZNvPUefJQ">
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -84,10 +84,6 @@ var _hmt = _hmt || [];
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -197,7 +193,7 @@ var _hmt = _hmt || [];
         <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>WXML支持模板（template）的特性，可以在模板中定义代码片段，在不同的地方来调用或引入。使用name属性定义模板的名称，通过is名称来使用。<br>使用<code>&lt;template name=&quot;&quot;&gt;&lt;/template&gt;</code>定义模板<br>使用<code>&lt;template is=&quot;&quot; data=&quot;&quot;/&gt;</code>引用模板<br><a id="more"></a><br><strong>一个简单的例子</strong><br>定义模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template name=&quot;msgItem&quot;&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;text&gt; 姓名:&#123;&#123;name&#125;&#125;，信息:&#123;&#123;msg&#125;&#125; &lt;/text&gt;</span><br><span class="line">    &lt;text&gt; 地址: &#123;&#123;address&#125;&#125; &lt;/text&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
 <p>使用is属性，声明需要的使用的模板，然后将模板所需要的 data 传入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  在js中对应的data</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    item: &#123;</span><br><span class="line">    name: &quot;小明&quot;,</span><br><span class="line">    msg: &apos;this is a student&apos;,</span><br><span class="line">    address: &apos;中国北京&apos;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;)</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;template name=&quot;msgItem&quot;&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;text&gt; 姓名:&#123;&#123;name&#125;&#125;，信息:&#123;&#123;msg&#125;&#125; &lt;/text&gt;</span><br><span class="line">    &lt;text&gt; 地址: &#123;&#123;address&#125;&#125; &lt;/text&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;template is = &quot;msgItem&quot; data=&quot;&#123;&#123;...item&#125;&#125;&quot; /&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 界面输出</span><br><span class="line">姓名：小明，信息：this is a student 地址：中国北京</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>动态使用模板</strong><br>is可以动态决定具体需要渲染哪个模板<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template name=&quot;odd&quot;&gt;</span><br><span class="line">  &lt;view&gt; odd &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;template name=&quot;even&quot;&gt;</span><br><span class="line">  &lt;view&gt; even &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;block wx:for=&quot;&#123;&#123;[1, 2, 3, 4, 5]&#125;&#125;&quot;&gt;</span><br><span class="line">  &lt;template is=&quot;&#123;&#123;item % 2 == 0 ? &apos;even&apos; : &apos;odd&apos;&#125;&#125;&quot;/&gt;</span><br><span class="line">&lt;/block&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 输出</span><br><span class="line">odd</span><br><span class="line">even</span><br><span class="line">odd</span><br><span class="line">even</span><br><span class="line">odd</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>模板引用</strong><br>WXML 提供两种文件引用方式import和include。<br>我们来看一下这两种引用方式的区别：<br>首先，新建一个模板页面template<br><img src="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1xvbner9sj306w038743.jpg" alt=""><br>template.wxml文件中定义一个模板:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/template/template.wxml--&gt;</span><br><span class="line">&lt;text&gt;pages/template/template.wxml&lt;/text&gt;</span><br><span class="line">&lt;template name=&quot;templatePerson&quot;&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;text&gt;我是模板一&lt;/text&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>模板引用</strong><br>WXML 提供两种文件引用方式import和include。<br>我们来看一下这两种引用方式的区别：<br>首先，新建一个模板页面template<br><img src="http://wx3.sinaimg.cn/mw690/007HSgDpgy1g1xvbner9sj306w038743.jpg" alt><br>template.wxml文件中定义一个模板:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/template/template.wxml--&gt;</span><br><span class="line">&lt;text&gt;pages/template/template.wxml&lt;/text&gt;</span><br><span class="line">&lt;template name=&quot;templatePerson&quot;&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;text&gt;我是模板一&lt;/text&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
 <p>template.js中设置内部状态变量person:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  person:&#123;</span><br><span class="line">    name:&quot;老张&quot;,</span><br><span class="line">    age:18,</span><br><span class="line">    phone:&quot;13212332112&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>使用import的方式来引入模板</strong><br>在index.wxml文件中引入上面定义的模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;!--只会 import 目标文件中定义的 template--&gt;</span><br><span class="line">&lt;import src=&quot;../template/template.wxml&quot;/&gt;</span><br><span class="line">&lt;template is=&quot;templatePerson&quot; data=&quot;&#123;&#123;...peoson&#125;&#125;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--在界面上输出</span><br><span class="line">    我是模板一</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>使用include的方式来引入模板</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--pages/wxml/index.wxml--&gt;</span><br><span class="line">&lt;include src=&quot;../template/template.wxml&quot;/&gt;</span><br><span class="line">&lt;template is=&quot;templatePerson&quot; data=&quot;&#123;&#123;...peoson&#125;&#125;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--在界面上输出</span><br><span class="line">    pages/template/template.wxml</span><br><span class="line">    我是模板一</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure></p>
@@ -424,7 +420,7 @@ var _hmt = _hmt || [];
     		
     
       	<div class="footer-right">
-      		&copy; 2019 JasonZhou.
+      		&copy; 2021 JasonZhou.
 		<span id="busuanzi_container_site_pv">
                 Total views:<span id="busuanzi_value_site_pv"></span>
 </span>
@@ -477,25 +473,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -570,22 +558,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/cfb475d89218" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-简书</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://ke.qq.com/teacher/64831031" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>孔浩老师-腾讯云课堂</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
