@@ -188,6 +188,17 @@ var _hmt = _hmt || [];
     </h1>
   
 
+	<!--显示阅读次数-->
+	
+	  <br/>
+	  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+	  <span class="icon-sort"></span>
+	  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+	    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+	  </span>
+	  </a>
+	
+	<!--显示阅读次数完毕-->
         
         <a href="/2018/01/02/02_ssh免密登陆/" class="archive-article-date">
   	<time datetime="2018-01-02T13:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
@@ -214,7 +225,7 @@ var _hmt = _hmt || [];
 <p><strong>第四步：修改文件”authorized_keys”权限</strong><br>这一步很重要，否则SSH登陆时仍然需要密码<br><code>chmod 700 ~/.ssh</code><br><code>chmod 600 authorized_keys</code>  </p>
 <p><strong>第五步：修改SSH配置文件</strong><br><code>vi /etc/ssh/sshd_config</code>  </p>
 <p>找到如下三条信息，默认是被注释的，将注释去掉，这三条信息的含义分别是：<br>RSAAuthentication yes # 启用 RSA 认证<br>PubkeyAuthentication yes # 启用公钥私钥配对认证方式<br>AuthorizedKeysFile .ssh/authorized_keys # 公钥文件路径（和authorized_keys文件路径相同）  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile     .ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span>AuthorizedKeysCommand none</span><br><span class="line"><span class="meta">#</span>AuthorizedKeysCommandRunAs nobody</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile     .ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span><span class="bash">AuthorizedKeysCommand none</span></span><br><span class="line"><span class="meta">#</span><span class="bash">AuthorizedKeysCommandRunAs nobody</span></span><br></pre></td></tr></table></figure>
 <p><strong>第六步：重启SSH服务</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@slave .ssh]# service sshd restart</span><br><span class="line">Stopping sshd: [  OK  ]</span><br><span class="line">Starting sshd: [  OK  ]</span><br></pre></td></tr></table></figure></p>
 <p><strong>第七步：验证，在 A机器master上使用 SSH登录 B机器 slave</strong>  </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master /]$ ssh slave</span><br><span class="line">Last login: Sun Jan 28 08:33:08 2018 from 192.168.2.100</span><br><span class="line">[hadoop@slave ~]$</span><br></pre></td></tr></table></figure>
