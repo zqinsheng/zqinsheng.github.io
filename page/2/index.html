@@ -360,99 +360,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-05_Hadoop RPC实现机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/05_Hadoop RPC实现机制/">Hadoop RPC实现机制</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2018/01/04/05_Hadoop RPC实现机制/" class="archive-article-date">
-  	<time datetime="2018-01-04T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Hadoop-RPC实现机制"><a href="#Hadoop-RPC实现机制" class="headerlink" title="Hadoop RPC实现机制"></a>Hadoop RPC实现机制</h1><h2 id="一、RPC基础概念"><a href="#一、RPC基础概念" class="headerlink" title="一、RPC基础概念"></a>一、RPC基础概念</h2><p>RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。<br>RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到达，服务器获得进程参数，根据参数作出答复，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。用简单的话说，就是一台计算机程序远程调用另外一台计算机的程序。<br>RPC对于我们来说是透明的，在调用的过程中感觉不到其间涉及跨机器间的通信，而是感觉像是在执行一个本地调用。我们不用去关心底层的网络通信细节，这是RPC中的访问透明性。  </p>
-<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt></p>
-        
-          <a class="article-more-a" href="/2018/01/04/05_Hadoop RPC实现机制/#more">more >></a>
-        
-      
-
-      
-    </div>
-   
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hadoop//" class="article-tag-list-link color2">hadoop</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/04/05_Hadoop RPC实现机制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-	
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-04_hdfs的java客户端编写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -516,6 +423,99 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/01/04/04_hdfs的java客户端编写/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+	
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-05_Hadoop RPC实现机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/04/05_Hadoop RPC实现机制/">Hadoop RPC实现机制</a>
+    </h1>
+  
+
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/2018/01/04/05_Hadoop RPC实现机制/" class="archive-article-date">
+  	<time datetime="2018-01-04T12:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hadoop-RPC实现机制"><a href="#Hadoop-RPC实现机制" class="headerlink" title="Hadoop RPC实现机制"></a>Hadoop RPC实现机制</h1><h2 id="一、RPC基础概念"><a href="#一、RPC基础概念" class="headerlink" title="一、RPC基础概念"></a>一、RPC基础概念</h2><p>RPC 是Remote Procedure Call（远程过程调用）的简写，是一种通过网络从远程计算机上请求服务的机制，封装了具体实现，使用户不需要了解底层网络技术。<br>RPC采用客户机/服务器模式,主要应用于一些分布式的系统，客户机上的一个请求程序,调用进程发送一个有进程参数的调用信息到服务进程，然后等待应答信息。在服务器端，进程保持睡眠状态直到调用信息的到达为止。当一个调用信息到达，服务器获得进程参数，根据参数作出答复，发送答复信息，然后等待下一个调用信息，最后，客户端调用进程接收答复信息，获得进程结果，然后调用执行继续进行。用简单的话说，就是一台计算机程序远程调用另外一台计算机的程序。<br>RPC对于我们来说是透明的，在调用的过程中感觉不到其间涉及跨机器间的通信，而是感觉像是在执行一个本地调用。我们不用去关心底层的网络通信细节，这是RPC中的访问透明性。  </p>
+<p><img src="http://wx3.sinaimg.cn/large/005TBZ5oly1fo8cmi1hldj30kx0beq4i.jpg" alt></p>
+        
+          <a class="article-more-a" href="/2018/01/04/05_Hadoop RPC实现机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+   
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hadoop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hadoop//" class="article-tag-list-link color2">hadoop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/04/05_Hadoop RPC实现机制/">展开全文 >></a>
         </p>
       
 
@@ -703,7 +703,7 @@ var _hmt = _hmt || [];
 <p><strong>第四步：修改文件”authorized_keys”权限</strong><br>这一步很重要，否则SSH登陆时仍然需要密码<br><code>chmod 700 ~/.ssh</code><br><code>chmod 600 authorized_keys</code>  </p>
 <p><strong>第五步：修改SSH配置文件</strong><br><code>vi /etc/ssh/sshd_config</code>  </p>
 <p>找到如下三条信息，默认是被注释的，将注释去掉，这三条信息的含义分别是：<br>RSAAuthentication yes # 启用 RSA 认证<br>PubkeyAuthentication yes # 启用公钥私钥配对认证方式<br>AuthorizedKeysFile .ssh/authorized_keys # 公钥文件路径（和authorized_keys文件路径相同）  </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile     .ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span><span class="bash">AuthorizedKeysCommand none</span></span><br><span class="line"><span class="meta">#</span><span class="bash">AuthorizedKeysCommandRunAs nobody</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RSAAuthentication yes</span><br><span class="line">PubkeyAuthentication yes</span><br><span class="line">AuthorizedKeysFile     .ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span>AuthorizedKeysCommand none</span><br><span class="line"><span class="meta">#</span>AuthorizedKeysCommandRunAs nobody</span><br></pre></td></tr></table></figure>
 <p><strong>第六步：重启SSH服务</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@slave .ssh]# service sshd restart</span><br><span class="line">Stopping sshd: [  OK  ]</span><br><span class="line">Starting sshd: [  OK  ]</span><br></pre></td></tr></table></figure></p>
 <p><strong>第七步：验证，在 A机器master上使用 SSH登录 B机器 slave</strong>  </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[hadoop@master /]$ ssh slave</span><br><span class="line">Last login: Sun Jan 28 08:33:08 2018 from 192.168.2.100</span><br><span class="line">[hadoop@slave ~]$</span><br></pre></td></tr></table></figure>
@@ -1243,21 +1243,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 <script>
 var _hmt = _hmt || [];
