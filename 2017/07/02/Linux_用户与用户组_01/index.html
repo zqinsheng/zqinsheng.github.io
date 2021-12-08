@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
 <meta property="og:description" content="用户和用户组掌握知识重点: 命令：管理用户和用户组方法的命令 设置文件属性及访问权限的命令  用户与用户组的概念不同用户具有不同的权限，Linux操作系统是通过用户来限制使用者使用资源划分，实现了多用户多任务的运行机制 例如：有四个用户：root、www、ftp、mysql，同一时间内，各自用户登录执行各自不同的任务，相互不影响 Linux用户分为三种角色：（1） 超级用户：默认是root，具备最">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-12-08T00:55:39.886Z">
+<meta property="og:updated_time" content="2021-12-08T01:28:44.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux中的用户和用户组">
 <meta name="twitter:description" content="用户和用户组掌握知识重点: 命令：管理用户和用户组方法的命令 设置文件属性及访问权限的命令  用户与用户组的概念不同用户具有不同的权限，Linux操作系统是通过用户来限制使用者使用资源划分，实现了多用户多任务的运行机制 例如：有四个用户：root、www、ftp、mysql，同一时间内，各自用户登录执行各自不同的任务，相互不影响 Linux用户分为三种角色：（1） 超级用户：默认是root，具备最">
@@ -197,6 +197,7 @@ var _hmt = _hmt || [];
 <h5 id="Linux用户分为三种角色："><a href="#Linux用户分为三种角色：" class="headerlink" title="Linux用户分为三种角色："></a>Linux用户分为三种角色：</h5><p>（1） 超级用户：默认是root，具备最高管理权限</p>
 <p>（2）普通用户：权限只能对自己目录下的文件进行访问和修改，可以登录系统</p>
 <p>（3）虚拟用户：该用户不能登录系统，但是用于系统管理，满足系统进程对文件属主的要求</p>
+<a id="more"></a>
 <h5 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h5><p>作用：简化用户管理工作</p>
 <p>例如：多个用户具有相同的权限，可以为文件授权，如有10个用户，授权10次，这样的不太合理，我们可以通过用户组的方式，将多个用户建立一个组，让文件为用户组授权</p>
 <h5 id="用户和用户组对应关系有：1对1、1对多、多对1"><a href="#用户和用户组对应关系有：1对1、1对多、多对1" class="headerlink" title="用户和用户组对应关系有：1对1、1对多、多对1"></a>用户和用户组对应关系有：1对1、1对多、多对1</h5><p>1对1：一个用户属于一个用户组</p>
@@ -962,21 +963,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 <script>
 var _hmt = _hmt || [];
