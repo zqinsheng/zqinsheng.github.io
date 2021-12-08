@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>图片转Base64方法 | JasonZhou&#39;s Blog</title>
+  <title>Linux中的用户和用户组 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发中经常遇到图片格式、编码的转换，这里记录一下图片转Base64的方法。">
-<meta name="keywords" content="解决方案">
+  <meta name="description" content="用户和用户组掌握知识重点: 命令：管理用户和用户组方法的命令 设置文件属性及访问权限的命令  用户与用户组的概念不同用户具有不同的权限，Linux操作系统是通过用户来限制使用者使用资源划分，实现了多用户多任务的运行机制 例如：有四个用户：root、www、ftp、mysql，同一时间内，各自用户登录执行各自不同的任务，相互不影响 Linux用户分为三种角色：（1） 超级用户：默认是root，具备最">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="图片转Base64方法">
-<meta property="og:url" content="https://zqinsheng.github.io/2017/11/08/java图片转Base64方法/index.html">
+<meta property="og:title" content="Linux中的用户和用户组">
+<meta property="og:url" content="https://zqinsheng.github.io/2017/07/02/Linux_用户与用户组_01/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
-<meta property="og:description" content="在开发中经常遇到图片格式、编码的转换，这里记录一下图片转Base64的方法。">
+<meta property="og:description" content="用户和用户组掌握知识重点: 命令：管理用户和用户组方法的命令 设置文件属性及访问权限的命令  用户与用户组的概念不同用户具有不同的权限，Linux操作系统是通过用户来限制使用者使用资源划分，实现了多用户多任务的运行机制 例如：有四个用户：root、www、ftp、mysql，同一时间内，各自用户登录执行各自不同的任务，相互不影响 Linux用户分为三种角色：（1） 超级用户：默认是root，具备最">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-21T06:16:35.909Z">
+<meta property="og:updated_time" content="2021-12-08T00:55:39.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图片转Base64方法">
-<meta name="twitter:description" content="在开发中经常遇到图片格式、编码的转换，这里记录一下图片转Base64的方法。">
+<meta name="twitter:title" content="Linux中的用户和用户组">
+<meta name="twitter:description" content="用户和用户组掌握知识重点: 命令：管理用户和用户组方法的命令 设置文件属性及访问权限的命令  用户与用户组的概念不同用户具有不同的权限，Linux操作系统是通过用户来限制使用者使用资源划分，实现了多用户多任务的运行机制 例如：有四个用户：root、www、ftp、mysql，同一时间内，各自用户登录执行各自不同的任务，相互不影响 Linux用户分为三种角色：（1） 超级用户：默认是root，具备最">
   
   
     <link rel="icon" href="/favicon.png">
@@ -168,30 +168,364 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            <article id="post-java图片转Base64方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux_用户与用户组_01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      图片转Base64方法
+      Linux中的用户和用户组
     </h1>
   
 
         
-        <a href="/2017/11/08/java图片转Base64方法/" class="archive-article-date">
-  	<time datetime="2017-11-08T14:55:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-08</time>
+        <a href="/2017/07/02/Linux_用户与用户组_01/" class="archive-article-date">
+  	<time datetime="2017-07-01T17:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在开发中经常遇到图片格式、编码的转换，这里记录一下图片转Base64的方法。  </p>
-<a id="more"></a>
-<p>FileUtil工具类:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zhouqinsheng.faceExam.apiTools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 文件读取工具类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取文件内容，作为字符串返回</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">readFileAsString</span><span class="params">(String filePath)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(filePath);</span><br><span class="line">        <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> FileNotFoundException(filePath);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (file.length() &gt; <span class="number">1024</span> * <span class="number">1024</span> * <span class="number">1024</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IOException(<span class="string">"File is too large"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder((<span class="keyword">int</span>) (file.length()));</span><br><span class="line">        <span class="comment">// 创建字节输入流</span></span><br><span class="line">        FileInputStream fis = <span class="keyword">new</span> FileInputStream(filePath);</span><br><span class="line">        <span class="comment">// 创建一个长度为10240的Buffer</span></span><br><span class="line">        <span class="keyword">byte</span>[] bbuf = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">10240</span>];</span><br><span class="line">        <span class="comment">// 用于保存实际读取的字节数</span></span><br><span class="line">        <span class="keyword">int</span> hasRead = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ( (hasRead = fis.read(bbuf)) &gt; <span class="number">0</span> ) &#123;</span><br><span class="line">            sb.append(<span class="keyword">new</span> String(bbuf, <span class="number">0</span>, hasRead));</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据文件路径读取byte[] 数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] readFileByBytes(String filePath) <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(filePath);</span><br><span class="line">        <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> FileNotFoundException(filePath);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ByteArrayOutputStream bos = <span class="keyword">new</span> ByteArrayOutputStream((<span class="keyword">int</span>) file.length());</span><br><span class="line">            BufferedInputStream in = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                in = <span class="keyword">new</span> BufferedInputStream(<span class="keyword">new</span> FileInputStream(file));</span><br><span class="line">                <span class="keyword">short</span> bufSize = <span class="number">1024</span>;</span><br><span class="line">                <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[bufSize];</span><br><span class="line">                <span class="keyword">int</span> len1;</span><br><span class="line">                <span class="keyword">while</span> (-<span class="number">1</span> != (len1 = in.read(buffer, <span class="number">0</span>, bufSize))) &#123;</span><br><span class="line">                    bos.write(buffer, <span class="number">0</span>, len1);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">byte</span>[] var7 = bos.toByteArray();</span><br><span class="line">                <span class="keyword">return</span> var7;</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (in != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        in.close();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException var14) &#123;</span><br><span class="line">                    var14.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                bos.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Base64Util工具类:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zhouqinsheng.faceExam.apiTools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Base64Util</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span> last2byte = (<span class="keyword">char</span>) Integer.parseInt(<span class="string">"00000011"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span> last4byte = (<span class="keyword">char</span>) Integer.parseInt(<span class="string">"00001111"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span> last6byte = (<span class="keyword">char</span>) Integer.parseInt(<span class="string">"00111111"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span> lead6byte = (<span class="keyword">char</span>) Integer.parseInt(<span class="string">"11111100"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span> lead4byte = (<span class="keyword">char</span>) Integer.parseInt(<span class="string">"11110000"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span> lead2byte = (<span class="keyword">char</span>) Integer.parseInt(<span class="string">"11000000"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">char</span>[] encodeTable = <span class="keyword">new</span> <span class="keyword">char</span>[]&#123;<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'H'</span>, <span class="string">'I'</span>, <span class="string">'J'</span>, <span class="string">'K'</span>, <span class="string">'L'</span>, <span class="string">'M'</span>, <span class="string">'N'</span>, <span class="string">'O'</span>, <span class="string">'P'</span>, <span class="string">'Q'</span>, <span class="string">'R'</span>, <span class="string">'S'</span>, <span class="string">'T'</span>, <span class="string">'U'</span>, <span class="string">'V'</span>, <span class="string">'W'</span>, <span class="string">'X'</span>, <span class="string">'Y'</span>, <span class="string">'Z'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'i'</span>, <span class="string">'j'</span>, <span class="string">'k'</span>, <span class="string">'l'</span>, <span class="string">'m'</span>, <span class="string">'n'</span>, <span class="string">'o'</span>, <span class="string">'p'</span>, <span class="string">'q'</span>, <span class="string">'r'</span>, <span class="string">'s'</span>, <span class="string">'t'</span>, <span class="string">'u'</span>, <span class="string">'v'</span>, <span class="string">'w'</span>, <span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>, <span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>, <span class="string">'+'</span>, <span class="string">'/'</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Base64Util</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(<span class="keyword">byte</span>[] from)</span> </span>&#123;</span><br><span class="line">        StringBuilder to = <span class="keyword">new</span> StringBuilder((<span class="keyword">int</span>) ((<span class="keyword">double</span>) from.length * <span class="number">1.34</span>D) + <span class="number">3</span>);</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span> currentByte = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; from.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (num %= <span class="number">8</span>; num &lt; <span class="number">8</span>; num += <span class="number">6</span>) &#123;</span><br><span class="line">                <span class="keyword">switch</span> (num) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (from[i] &amp; lead6byte);</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (currentByte &gt;&gt;&gt; <span class="number">2</span>);</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                    <span class="keyword">default</span>:</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (from[i] &amp; last6byte);</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (from[i] &amp; last4byte);</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (currentByte &lt;&lt; <span class="number">2</span>);</span><br><span class="line">                        <span class="keyword">if</span> (i + <span class="number">1</span> &lt; from.length) &#123;</span><br><span class="line">                            currentByte = (<span class="keyword">char</span>) (currentByte | (from[i + <span class="number">1</span>] &amp; lead2byte) &gt;&gt;&gt; <span class="number">6</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (from[i] &amp; last2byte);</span><br><span class="line">                        currentByte = (<span class="keyword">char</span>) (currentByte &lt;&lt; <span class="number">4</span>);</span><br><span class="line">                        <span class="keyword">if</span> (i + <span class="number">1</span> &lt; from.length) &#123;</span><br><span class="line">                            currentByte = (<span class="keyword">char</span>) (currentByte | (from[i + <span class="number">1</span>] &amp; lead4byte) &gt;&gt;&gt; <span class="number">4</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                to.append(encodeTable[currentByte]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (to.length() % <span class="number">4</span> != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (i = <span class="number">4</span> - to.length() % <span class="number">4</span>; i &gt; <span class="number">0</span>; --i) &#123;</span><br><span class="line">                to.append(<span class="string">"="</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> to.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="用户和用户组"><a href="#用户和用户组" class="headerlink" title="用户和用户组"></a>用户和用户组</h1><h3 id="掌握知识重点"><a href="#掌握知识重点" class="headerlink" title="掌握知识重点:"></a>掌握知识重点:</h3><ol>
+<li>命令：管理用户和用户组方法的命令</li>
+<li>设置文件属性及访问权限的命令</li>
+</ol>
+<h3 id="用户与用户组的概念"><a href="#用户与用户组的概念" class="headerlink" title="用户与用户组的概念"></a>用户与用户组的概念</h3><p>不同用户具有不同的权限，Linux操作系统是通过用户来限制使用者使用资源划分，实现了多用户多任务的运行机制</p>
+<p>例如：有四个用户：root、www、ftp、mysql，同一时间内，各自用户登录执行各自不同的任务，相互不影响</p>
+<h5 id="Linux用户分为三种角色："><a href="#Linux用户分为三种角色：" class="headerlink" title="Linux用户分为三种角色："></a>Linux用户分为三种角色：</h5><p>（1） 超级用户：默认是root，具备最高管理权限</p>
+<p>（2）普通用户：权限只能对自己目录下的文件进行访问和修改，可以登录系统</p>
+<p>（3）虚拟用户：该用户不能登录系统，但是用于系统管理，满足系统进程对文件属主的要求</p>
+<h5 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h5><p>作用：简化用户管理工作</p>
+<p>例如：多个用户具有相同的权限，可以为文件授权，如有10个用户，授权10次，这样的不太合理，我们可以通过用户组的方式，将多个用户建立一个组，让文件为用户组授权</p>
+<h5 id="用户和用户组对应关系有：1对1、1对多、多对1"><a href="#用户和用户组对应关系有：1对1、1对多、多对1" class="headerlink" title="用户和用户组对应关系有：1对1、1对多、多对1"></a>用户和用户组对应关系有：1对1、1对多、多对1</h5><p>1对1：一个用户属于一个用户组</p>
+<p>1对多：一个用户属于多个用户组</p>
+<p>多对1：多个用户属于一个组</p>
+<p>Linux系统中每一个用户都至少属于一个用户组</p>
+<h3 id="与用户管理相关的系统文件"><a href="#与用户管理相关的系统文件" class="headerlink" title="与用户管理相关的系统文件"></a>与用户管理相关的系统文件</h3><h5 id="与用户相关的系统文件有：-etc-passwd、-etc-shadow、-etc-group、-etc-gshadow"><a href="#与用户相关的系统文件有：-etc-passwd、-etc-shadow、-etc-group、-etc-gshadow" class="headerlink" title="与用户相关的系统文件有： /etc/passwd、/etc/shadow、/etc/group、/etc/gshadow"></a>与用户相关的系统文件有： /etc/passwd、/etc/shadow、/etc/group、/etc/gshadow</h5><ol>
+<li>用户信息配置文件，用户信息存放于该文件中，可以进行修改配置      <strong>路径：/etc/passwd</strong></li>
+<li>用户密码配置文件，存放系统用户的密码管理文件     <strong>路径：/etc/shadow</strong></li>
+<li>用户组配置文件，对用户组进行管理及控制访问权限的文件      <strong>路径:/ect/group</strong></li>
+<li>用户组密码配置文件，该文件用于定义用户组命令、组管理员等信息     <strong>路径：/ect/gshadow</strong></li>
+</ol>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>对用户的管理命令主要包含用户创建、修改、删除</p>
+<h4 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1.创建用户"></a>1.创建用户</h4><p>命令格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd [选项] 用户名</span><br></pre></td></tr></table></figure>
+<p>创建用户可支持的 [选项]</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项命令</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>-d</strong></td>
+<td><strong>创建用户的时候指定用户主目录</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-g</strong></td>
+<td><strong>创建用户的时候指定用户组</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">-m</td>
+<td>若主目录不存在，则创建</td>
+</tr>
+<tr>
+<td style="text-align:center">-M</td>
+<td>不创建主目录</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-c</strong></td>
+<td><strong>对该账号添加注释</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td>创建系统账号</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-s</strong></td>
+<td><strong>指定用户登录的时候使用的shell类型，默认为/bin/bash</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>例1:创建用户tom</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>useradd tom</span><br></pre></td></tr></table></figure>
+<p>以上命令回创建用户tom，但是创建的时候没有指定tom的用户组和主目录，系统会创建同名的用户组tom作为tom用户的<strong>用户组</strong> ，同时还会在/home目录下创建同名的tom目录作为tom的<strong>主目录</strong></p>
+<p><strong>例2：创建名为zhangqi的用户，设置主目录为：var/zhangqi，作为root组的成员，加注释：101school，指定用户shell为：bin/sh</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>useradd -d /var/zhangqi -g root -c 101school -s /bin/sh zhangqi</span><br></pre></td></tr></table></figure>
+<h4 id="2-修改用户"><a href="#2-修改用户" class="headerlink" title="2.修改用户"></a>2.修改用户</h4><p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod 选项 用户名</span><br></pre></td></tr></table></figure>
+<p>修改用户支持的命令选项说明</p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>功能说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-l</strong></td>
+<td><strong>修改用户名</strong></td>
+</tr>
+<tr>
+<td>-e</td>
+<td>修改用户的描述信息</td>
+</tr>
+<tr>
+<td><strong>-d</strong></td>
+<td><strong>修改用户主目录</strong></td>
+</tr>
+<tr>
+<td>-L</td>
+<td>锁定账号，临时禁止用户登录</td>
+</tr>
+<tr>
+<td>-U</td>
+<td>对账号进行解锁</td>
+</tr>
+<tr>
+<td><strong>-g</strong></td>
+<td><strong>修改用户的所属组</strong></td>
+</tr>
+<tr>
+<td>-s</td>
+<td>修改用户登陆后使用的Shell类型</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>修改用户ID号</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>修改用户的有效期</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>修改用户密码在多少天后过期</td>
+</tr>
+<tr>
+<td><strong>-c</strong></td>
+<td><strong>修改用户的注释</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>例1：修改用户zhangqi的用户名为zhangqiming</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>usermod -l zhangqiming zhangqi</span><br></pre></td></tr></table></figure>
+<p><strong>例2：修改zhangqiming用户的主目录修改为/var/zhangqiming</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>usermod -d /var/zhangqiming zhangqiming</span><br></pre></td></tr></table></figure>
+<p><strong>例3：修改zhangqiming的注释信息为neusoft</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>usermod -c neusoft zhangqiming</span><br></pre></td></tr></table></figure>
+<h4 id="3-用户删除"><a href="#3-用户删除" class="headerlink" title="3. 用户删除"></a>3. 用户删除</h4><p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userdel [-r] 用户名         -r：在删除用户的时候，连同用户对应的主目录一起删除</span><br></pre></td></tr></table></figure>
+<p><strong>例：删除用户zhangqiming及其主目录、用户相关的文档</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>userdel -r zhangqiming</span><br></pre></td></tr></table></figure>
+<h4 id="4-用passwd命令管理用户登录密码"><a href="#4-用passwd命令管理用户登录密码" class="headerlink" title="4. 用passwd命令管理用户登录密码"></a>4. 用passwd命令管理用户登录密码</h4><p>只有root（超级管理员）用户才有权限设置指定用户的密码，普通用户只能设置或修改自己的密码，直接执行passwd命令，不加用户名可以设置当前用户的密码</p>
+<p>命令格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd [选项] 用户名</span><br></pre></td></tr></table></figure>
+<p>除了可以设置密码外，还可以使用passwd管理用户的密码</p>
+<p>passwd的命令选项及功能说明:</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l</td>
+<td>锁定用户密码</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>解锁密码</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>查询用户密码状态</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>删除用户密码</td>
+</tr>
+</tbody>
+</table>
+<h3 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h3><p>用户组的管理，主要包括对用户组的创建、用户组信息的修改以及用户组的删除</p>
+<p><strong>1.用户组的创建</strong></p>
+<p>用户组的功能是讲用户进行分类归组，便于进行访问控制，一个用户可以同时属于多个多用户组，一个用户组也可以包含多个不同的用户，用户和用户组是多对多的关系</p>
+<p>命令格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupadd [选项] 用户组名称       常用选项-r:创建系统用户组</span><br></pre></td></tr></table></figure>
+<p>每一个用户组都有一个自己的ID，称为GID，如果GID大于等于1000，该用户组则为系统用户组，小于1000称为普通用户组</p>
+<p><strong>例：创建用户组student</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>groupadd student</span><br></pre></td></tr></table></figure>
+<p><strong>2.用户组的修改</strong></p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupmod 选项 组名</span><br></pre></td></tr></table></figure>
+<p>groupmod命令选项及功能说明：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n</td>
+<td>修改组名</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>修改组标识GID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例：将用户组student修改为teacher</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>groupmod -n teacher student</span><br></pre></td></tr></table></figure>
+<p><strong>3.用户组的删除</strong></p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupdel 组名</span><br></pre></td></tr></table></figure>
+<p><strong>例：删除用户组teacher</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>groupdel teacher</span><br></pre></td></tr></table></figure>
+<p>注意：在删除用户组的时候，被删除的用户组不能使某个用户的主组，否则无法删除，若必须删除，则应先删除用户，再删除用户组</p>
+<p><strong>4.维护组中的成员</strong></p>
+<p>gpasswd可以用于把用户添加在组、从组中删除、把用户设置为管理员</p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpasswd 选项 用户名 组名</span><br></pre></td></tr></table></figure>
+<p>gpasswd命令选项及功能说明</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>添加用户到组</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>将用户从组中删除</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>设置用户为组管理员</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例1：将lili用户添加到teacher组</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>gpasswd -a lili teacher</span><br></pre></td></tr></table></figure>
+<p><strong>例2：将lili从teacher组中删除</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>gpasswd -d lili teacher</span><br></pre></td></tr></table></figure>
+<p><strong>例3：将lili设置为teacher组的管理员</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>gpasswd -A lili teacher</span><br></pre></td></tr></table></figure>
+<h1 id="项目实践"><a href="#项目实践" class="headerlink" title="项目实践"></a>项目实践</h1><h3 id="项目一：用户账号与用户组的创建"><a href="#项目一：用户账号与用户组的创建" class="headerlink" title="项目一：用户账号与用户组的创建"></a>项目一：用户账号与用户组的创建</h3><p>两个用户组：</p>
+<p>用户组1：dgroups01     </p>
+<p>用户名：– dguser0101     – 密码：dguser0101</p>
+<p>用户组2：dgroups02 </p>
+<p>用户名：– dguser0202      –密码：dguser0202</p>
+<h6 id="创建用户组"><a href="#创建用户组" class="headerlink" title="创建用户组"></a>创建用户组</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>groupadd 用户组名称</span><br></pre></td></tr></table></figure>
+<h6 id="创建指定用户组下的用户"><a href="#创建指定用户组下的用户" class="headerlink" title="创建指定用户组下的用户"></a>创建指定用户组下的用户</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>useradd -g 用户组名称 用户名</span><br></pre></td></tr></table></figure>
+<h6 id="设置创建用户的密码"><a href="#设置创建用户的密码" class="headerlink" title="设置创建用户的密码"></a>设置创建用户的密码</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>passwd 密码</span><br></pre></td></tr></table></figure>
+<h6 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">创建用户组1： #groupadd dgroups01                     //创建用户组dgroups01</span><br><span class="line">在用户组1下创建账号1: #useradd -g dgroups01 dguser0101  //创建用户账号dguser011在的group-1组</span><br><span class="line">为创建完的账号1设置密码： #passwd dguser0101    //设置密码</span><br><span class="line">创建用户组2： #groupadd dgroups02  //创建用户组dgroups02</span><br><span class="line">在用户组2下创建账号2： #useradd -g dgroups02 dguser0202 //在dgroups02下创建用户</span><br><span class="line">为创建完的账号2设置密码：#passwd dguser0202</span><br></pre></td></tr></table></figure>
+<h3 id="项目二：文件属性的读取和修改"><a href="#项目二：文件属性的读取和修改" class="headerlink" title="项目二：文件属性的读取和修改"></a>项目二：文件属性的读取和修改</h3><ul>
+<li>设计部Web项目组近期招聘了两名在校大学生到项目组实习，并为他们做了关于Linux基础应用方面的培训。两人为了尽快熟悉Linux系统，共享学习心得打算在系统的/tmp目录下创建一个名为ourfile文件，用于分享学习收获。因此两用户需要可以随时读取和修改ourfile文件的内容。</li>
+<li>本项目中两个人要共享一份文件，都需要对文件进行随时地读取和修改</li>
+</ul>
+<p><strong>【操作过程】</strong></p>
+<ol>
+<li>创建账号：dguser0102，以dguser0102账号登录系统</li>
+<li>使用touch命令创建文件ourfile</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>touch /tmp/ourfile                            //创建完成之后若其他用户修改文件ourfile，则系统会报错“文件只读”，而不能完成修改功能</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用chmod修改文件的访问权限</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>chmod 666 /tmp/ourfile</span><br></pre></td></tr></table></figure>
+<p><strong>1.【文件属性-权限的设置和修改】</strong></p>
+<p>使用长格式产看目录信息时，会看到每个文件或目录开始会有如下的，信息，这个信息就是文件属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lrwxrwxrwx</span><br><span class="line">dr-xrwx-wx</span><br><span class="line">drwx-wxr-x</span><br></pre></td></tr></table></figure>
+<p>文件属性由10个字母组成，第一个字母表示文件类型，后面九个字母分为三组，表示文件的访问权限，构成如下表所示：</p>
+<table><br>    <tr><br>        <td>类型标识</td><br>        <td>r</td><br>        <td>w</td><br>        <td>x</td><br>        <td>r</td><br>        <td>w</td><br>        <td>x</td><br>        <td>r</td><br>        <td>w</td><br>        <td>x</td><br>    </tr><br>    <tr><br>        <td></td><br>        <td colspan="3">文件所有者对该文件拥有的权限</td><br>        <td colspan="3">文件所属组队文件拥有的权限</td><br>        <td colspan="3">其他用户对文件拥有的权限</td><br>    </tr><br></table><br>
+
+<p>用户对文件的操作权限分为读、写和执行三种，分别用r、w、x表示。若用户没有某个权限，则在相应权限位用“-”占位，代表无此权限。</p>
+<p>若文件具有x属性，是可执行的文件。具有x属性的文件一般是二进制程序文件或可执行的脚本文件。若目录具有x属性，则表示允许打开该目录中的文件，并且可用cd命令进入该目录。</p>
+<p>只有root用户和文件拥有者才可以修改文件访问权限。</p>
+<p>第一个字母是类型标识，用来说明文件的类型，在Linux中文件的类型有七种，分别是：</p>
+<ul>
+<li>d(目录文件)</li>
+<li>l(符号链接，相当于windows下的快捷方式)</li>
+<li>s(套接字文件)</li>
+<li>b(块设备文件，二进制文件)</li>
+<li>c(字符设备文件)</li>
+<li>p(管道文件)</li>
+<li>-(普通文件)</li>
+</ul>
+<p><strong>【修改文件属性】</strong></p>
+<p>修改文件访问权限的chmod命令</p>
+<p><strong>(1)绝对权限方法</strong></p>
+<p>文件的九位权限除了可用r、w、x来表示外，还可用一个3位的十进制数字来表示。</p>
+<p>比如:644，其百位上的数字代表文件拥有者的权限，十位上的数字代表所属用户组的权限，个位上的数字代表其他用户对该文件的权限。这种采用数字来表示权限的方法，称为绝对权限表示法也称为数字权限表示法。</p>
+<p>由于用户的权限是用rwx来表示的，没有的权限对应位置上用“-”表示，有权限的位置可用1表示，没有权限的位置用0来表示，这样就会形成一个3位的二进制编码，然后将该二进制数转换成对应的十进制数，这样就得到一个0~7的数，从而就可以实现十进制数来表示用户对文件的权限。</p>
+<p>例如：rwx –&gt;111–&gt;7        r-x–&gt;101–&gt;5         –x–&gt;001–&gt;1        -wx–&gt;011–&gt;3</p>
+<p>绝对权限方法更改文件权限的命令格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chmod [选项] 绝对权限值 要修改的文件或目录</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>例1：修改当前目录下test文件的访问权限，使所有用户对该文件均有读写权限</strong></li>
+</ul>
+<p>分析：所有用户均有则权限如下：</p>
+<p>rw-rw-rw-<br>110110110<br>666</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chmod 666 test</span><br></pre></td></tr></table></figure>
+<p><strong>(2)相对权限方法</strong></p>
+<p>相对权限方式更改权限的命令格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chmod 修改对象 运算符 用户权限 要修改的文件或目录名称</span><br></pre></td></tr></table></figure>
+<p>– <strong>修改对象</strong>可以是u（文件的所有者）、g（文件的所属组）、o（其他用户）</p>
+<p>– <strong>运算符</strong>可以是+（添加）、-（删除）、=（只赋值）</p>
+<p>– <strong>用户权限</strong>可以是r（读）、w（写）、x（运行）</p>
+<ul>
+<li><strong>例：对文件test的组用户添加写权限</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chmod g + w test</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>例：修改当前目录下test文件的访问权限，使所有用户对该文件均有读写权限</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chmod ugo + rw test</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>例：增加组用户对当前目录下file文件的写权限，取消其他用户对file文件的读权限</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chmod g + w file</span><br><span class="line"><span class="meta">#</span>chmod o - w file</span><br></pre></td></tr></table></figure>
+<p><strong>2.【修改文件所有者(所属组)的chown命令】</strong></p>
+<p>root用户可以将一个文件或目录的拥有权转让其他用户，使其他用户成为该文件或目录的所有者，通过chown命令还可以修改文件所属的组</p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown [选项] 新所有者.新用户组 要修改的文件或目录名称       选项：常用的命令是-R，可以通过递归设置指定目录下的全部文件，包括子目录和子文件</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>例：将当前目录下的file文件的所有者修改为tom，所属组改为tom组</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chown tom.tom file</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>例：将当前目录下的file文件的所属组改为tom组</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>chown .tom file</span><br></pre></td></tr></table></figure>
+<p><strong>3.【提升用户权限】</strong></p>
+<p>(1) 使用su命令切换用户</p>
+<p>命令格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su 用户名</span><br></pre></td></tr></table></figure>
+<p>使用su命令，可以切换用户的身份</p>
+<p>root–&gt;普通用户（直接切换）</p>
+<p>普通用户–&gt;root（需要root用户的密码）</p>
+<p>普通用户–&gt;普通用户（需要普通用户的密码）</p>
+<ul>
+<li><strong>例：从root用户切换到tom用户</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>su - tom</span><br></pre></td></tr></table></figure>
+<p>(2)使用sudo命令提升权限</p>
+<p>在命令前加上sudo，该命令就会取得管理员的权限。</p>
 
       
 
@@ -231,7 +565,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -243,7 +577,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -298,7 +632,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2017/11/08/java图片转Base64方法/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2017/07/02/Linux_用户与用户组_01/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,11 +646,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/12/10/java后台发送请求封装方法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/08/java_图片转Base64方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          java后台发送请求封装方法
+          图片转Base64方法
         
       </div>
     </a>
@@ -345,7 +679,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用户和用户组"><span class="toc-number">1.</span> <span class="toc-text">用户和用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#掌握知识重点"><span class="toc-number">1.0.1.</span> <span class="toc-text">掌握知识重点:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户与用户组的概念"><span class="toc-number">1.0.2.</span> <span class="toc-text">用户与用户组的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux用户分为三种角色："><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">Linux用户分为三种角色：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#用户组"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">用户组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#用户和用户组对应关系有：1对1、1对多、多对1"><span class="toc-number">1.0.2.0.3.</span> <span class="toc-text">用户和用户组对应关系有：1对1、1对多、多对1</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#与用户管理相关的系统文件"><span class="toc-number">1.0.3.</span> <span class="toc-text">与用户管理相关的系统文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#与用户相关的系统文件有：-etc-passwd、-etc-shadow、-etc-group、-etc-gshadow"><span class="toc-number">1.0.3.0.1.</span> <span class="toc-text">与用户相关的系统文件有： /etc/passwd、/etc/shadow、/etc/group、/etc/gshadow</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户管理"><span class="toc-number">1.0.4.</span> <span class="toc-text">用户管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建用户"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">1.创建用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-修改用户"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">2.修改用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-用户删除"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">3. 用户删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-用passwd命令管理用户登录密码"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">4. 用passwd命令管理用户登录密码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户组管理"><span class="toc-number">1.0.5.</span> <span class="toc-text">用户组管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目实践"><span class="toc-number">2.</span> <span class="toc-text">项目实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#项目一：用户账号与用户组的创建"><span class="toc-number">2.0.1.</span> <span class="toc-text">项目一：用户账号与用户组的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#创建用户组"><span class="toc-number">2.0.1.0.0.1.</span> <span class="toc-text">创建用户组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#创建指定用户组下的用户"><span class="toc-number">2.0.1.0.0.2.</span> <span class="toc-text">创建指定用户组下的用户</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#设置创建用户的密码"><span class="toc-number">2.0.1.0.0.3.</span> <span class="toc-text">设置创建用户的密码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#例："><span class="toc-number">2.0.1.0.0.4.</span> <span class="toc-text">例：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目二：文件属性的读取和修改"><span class="toc-number">2.0.2.</span> <span class="toc-text">项目二：文件属性的读取和修改</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -501,6 +835,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -550,7 +888,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">白日梦研究专家&lt;br&gt;&lt;br&gt;浪漫反派学家&lt;br&gt;&lt;br&gt;互联网冲浪金牌选手&lt;br&gt;&lt;br&gt;万物都爱我，也恨我不争气&lt;br&gt;&lt;br&gt;</div>
   	  	
     	</section>
     

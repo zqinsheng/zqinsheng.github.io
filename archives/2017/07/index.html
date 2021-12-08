@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zqinsheng.github.io">
-  <title>java图片压缩大小的方法 | JasonZhou&#39;s Blog</title>
+  <title>Archives: 2017/7 | JasonZhou&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java图片裁剪、压缩的方法。">
-<meta name="keywords" content="解决方案">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java图片压缩大小的方法">
-<meta property="og:url" content="https://zqinsheng.github.io/2017/12/18/java图片压缩大小的方法/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="JasonZhou&#39;s Blog">
+<meta property="og:url" content="https://zqinsheng.github.io/archives/2017/07/index.html">
 <meta property="og:site_name" content="JasonZhou&#39;s Blog">
-<meta property="og:description" content="java图片裁剪、压缩的方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-21T06:21:37.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java图片压缩大小的方法">
-<meta name="twitter:description" content="java图片裁剪、压缩的方法。">
+<meta name="twitter:title" content="JasonZhou&#39;s Blog">
   
   
     <link rel="icon" href="/favicon.png">
@@ -168,234 +163,71 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>		
 	  </div>	  
           <div id="js-content" class="content-ll">
-            <article id="post-java图片压缩大小的方法" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      java图片压缩大小的方法
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/02/Linux_用户与用户组_01/" class="archive-article-date">
+  	<time datetime="2017-07-01T17:15:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/02/Linux_用户与用户组_01/">Linux中的用户和用户组</a>
     </h1>
   
 
-        
-        <a href="/2017/12/18/java图片压缩大小的方法/" class="archive-article-date">
-  	<time datetime="2017-12-17T16:55:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>java图片裁剪、压缩的方法。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.zhouqinsheng.faceExam.apiTools;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.CropImageFilter;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.FilteredImageSource;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.ImageFilter;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImgTools</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 按照 宽高 比例压缩</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> img</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> width</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> height</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> out</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">thumbnail_w_h</span><span class="params">(File img, <span class="keyword">int</span> width, <span class="keyword">int</span> height,</span></span></span><br><span class="line"><span class="function"><span class="params">                                     OutputStream out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedImage bi = ImageIO.read(img);</span><br><span class="line">        <span class="keyword">double</span> srcWidth = bi.getWidth(); <span class="comment">// 源图宽度</span></span><br><span class="line">        <span class="keyword">double</span> srcHeight = bi.getHeight(); <span class="comment">// 源图高度</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> scale = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (width &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            scale = width / srcWidth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (height &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            scale = height / srcHeight;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (width &gt; <span class="number">0</span> &amp;&amp; height &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            scale = height / srcHeight &lt; width / srcWidth ? height / srcHeight</span><br><span class="line">                    : width / srcWidth;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        thumbnail(img, (<span class="keyword">int</span>) (srcWidth * scale), (<span class="keyword">int</span>) (srcHeight * scale), out);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 按照固定宽高原图压缩</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> img</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> width</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> height</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> out</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">thumbnail</span><span class="params">(File img, <span class="keyword">int</span> width, <span class="keyword">int</span> height,</span></span></span><br><span class="line"><span class="function"><span class="params">                                 OutputStream out)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        BufferedImage BI = ImageIO.read(img);</span><br><span class="line">        Image image = BI.getScaledInstance(width, height, Image.SCALE_SMOOTH);</span><br><span class="line"></span><br><span class="line">        BufferedImage tag = <span class="keyword">new</span> BufferedImage(width, height,</span><br><span class="line">                BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        Graphics g = tag.getGraphics();</span><br><span class="line">        g.setColor(Color.RED);</span><br><span class="line">        g.drawImage(image, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">null</span>); <span class="comment">// 绘制处理后的图</span></span><br><span class="line">        g.dispose();</span><br><span class="line">        ImageIO.write(tag, <span class="string">"JPEG"</span>, out);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 按照宽高裁剪</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> srcImageFile</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> destWidth</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> destHeight</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> out</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">cut_w_h</span><span class="params">(File srcImageFile, <span class="keyword">int</span> destWidth,</span></span></span><br><span class="line"><span class="function"><span class="params">                               <span class="keyword">int</span> destHeight, OutputStream out)</span> </span>&#123;</span><br><span class="line">        cut_w_h(srcImageFile, <span class="number">0</span>, <span class="number">0</span>, destWidth, destHeight, out);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">cut_w_h</span><span class="params">(File srcImageFile, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> destWidth,</span></span></span><br><span class="line"><span class="function"><span class="params">                               <span class="keyword">int</span> destHeight, OutputStream out)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Image img;</span><br><span class="line">            ImageFilter cropFilter;</span><br><span class="line">            <span class="comment">// 读取源图像</span></span><br><span class="line">            BufferedImage bi = ImageIO.read(srcImageFile);</span><br><span class="line">            <span class="keyword">int</span> srcWidth = bi.getWidth(); <span class="comment">// 源图宽度</span></span><br><span class="line">            <span class="keyword">int</span> srcHeight = bi.getHeight(); <span class="comment">// 源图高度</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (srcWidth &gt;= destWidth &amp;&amp; srcHeight &gt;= destHeight) &#123;</span><br><span class="line">                Image image = bi.getScaledInstance(srcWidth, srcHeight,</span><br><span class="line">                        Image.SCALE_DEFAULT);</span><br><span class="line"></span><br><span class="line">                cropFilter = <span class="keyword">new</span> CropImageFilter(x, y, destWidth, destHeight);</span><br><span class="line">                img = Toolkit.getDefaultToolkit().createImage(</span><br><span class="line">                        <span class="keyword">new</span> FilteredImageSource(image.getSource(), cropFilter));</span><br><span class="line">                BufferedImage tag = <span class="keyword">new</span> BufferedImage(destWidth, destHeight,</span><br><span class="line">                        BufferedImage.TYPE_INT_RGB);</span><br><span class="line">                Graphics g = tag.getGraphics();</span><br><span class="line">                g.drawImage(img, <span class="number">0</span>, <span class="number">0</span>, <span class="keyword">null</span>); <span class="comment">// 绘制截取后的图</span></span><br><span class="line">                g.dispose();</span><br><span class="line">                <span class="comment">// 输出为文件</span></span><br><span class="line">                ImageIO.write(tag, <span class="string">"JPEG"</span>, out);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">// #cut_w_h</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File img = <span class="keyword">new</span> File(<span class="string">"D:/uploadImg/01.jpg"</span>);</span><br><span class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">"D:/uploadImg/yasuo.jpg"</span>);</span><br><span class="line">        <span class="comment">// ImgTools.thumbnail(img, 100, 100, fos);</span></span><br><span class="line">        <span class="comment">// ImgTools.cut_w_h(img, 230, 200, fos);</span></span><br><span class="line">        <span class="comment">//ImgTools.thumbnail_w_h(img, 100, 0, fos);</span></span><br><span class="line">        ImgTools.thumbnail_w_h(img,<span class="number">400</span>,<span class="number">400</span>,fos);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text" >
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixin.png" style="width:200px;height:200px;font-family:'微软雅黑';">
-                      <span class="reward-type">微信赞赏</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">解决方案</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zqinsheng.github.io/2017/12/18/java图片压缩大小的方法/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/28/java统一返回到前台的实体类封装/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java统一返回到前台的实体类封装
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/12/10/java后台发送请求封装方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java后台发送请求封装方法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
- 
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-	
-   		
-	
-  
-
-
-
-
-
-<!-- 来必力City版安装代码 -->
-
-  <!-- 这一句是适配样式 -->
-  <section class="duoshuo" id="comments">
-    <!-- 以下是 来必力City版安装代码 -->
-    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjg0Mi85NDAz">
-      <script type="text/javascript">
-       (function(d, s) {
-           var j, e = d.getElementsByTagName(s)[0];
-           if (typeof LivereTower === 'function') { return; }
-           j = d.createElement(s);
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-           e.parentNode.insertBefore(j, e);
-       })(document, 'script');
-      </script>
-    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-  </section>
-
+    
 
 		    
           </div>
@@ -427,8 +259,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -503,6 +335,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -552,7 +388,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">白日梦研究专家&lt;br&gt;&lt;br&gt;浪漫反派学家&lt;br&gt;&lt;br&gt;互联网冲浪金牌选手&lt;br&gt;&lt;br&gt;万物都爱我，也恨我不争气&lt;br&gt;&lt;br&gt;</div>
   	  	
     	</section>
     
